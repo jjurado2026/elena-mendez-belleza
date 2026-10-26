@@ -41,10 +41,6 @@
   .mas a:hover { transform: translateY(-2px); }
   .mas a:active { transform: translateY(1px); }
 
-  /* los cuatro puntos del marcaje, como en la home */
-  .marcas { display: flex; gap: 10px; }
-  .marcas i { width: 9px; height: 9px; border-radius: 50%; background: var(--oro-marca); }
-
   .miniatura[hidden] { display: none; }
   .miniatura { justify-self: center; }
   .ventana { display: block; width: min(300px, 70vw); height: var(--alto); overflow: hidden; border-radius: 6px; background: #fff;
@@ -56,13 +52,10 @@
     .miniatura { justify-self: end; }
   }
   @keyframes entra { from { opacity: 0; transform: translateY(20px); } }
-  @keyframes punto { from { opacity: 0; transform: scale(0); } }
   @keyframes recorre { 0%, 6% { transform: none; } 94%, 100% { transform: translateY(calc(-100% + var(--alto))); } }
   @media (prefers-reduced-motion: no-preference) {
     .aviso__texto > * { animation: entra .9s var(--sale) both; }
     .aviso__texto > :nth-child(2) { animation-delay: .1s; } .aviso__texto > :nth-child(3) { animation-delay: .2s; }
-    .marcas i { animation: punto .6s var(--muelle) both; }
-    .marcas i:nth-child(2) { animation-delay: .1s; } .marcas i:nth-child(3) { animation-delay: .2s; } .marcas i:nth-child(4) { animation-delay: .3s; }
     .ventana { animation: entra 1s var(--sale) .25s both; }
     .ventana img { animation: recorre 52s ease-in-out 1.6s infinite alternate; }
     .ventana:hover img, .ventana:focus img { animation-play-state: paused; }
@@ -77,7 +70,6 @@
 
   <main class="aviso">
     <div class="aviso__texto">
-      <span class="marcas" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
       <h1>No puedes ver esta página porque han pasado más de 10&nbsp;días desde su envío.</h1>
       <p class="mas">Si sigues con interés, escríbeme a <a href="mailto:jjuradogarciadelrio@gmail.com?subject=Propuesta%20web%20Elena%20M%C3%A9ndez%20Medicina%20Est%C3%A9tica">jjuradogarciadelrio@gmail.com</a>.</p>
     </div>
