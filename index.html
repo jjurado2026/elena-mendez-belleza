@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://elenamendez-belleza.com/">
 <!-- Prototipo de propuesta: fuera de los buscadores. En la web definitiva, quitar esta línea. -->
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#2F3854">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Elena Méndez Medicina Estética">
@@ -25,11 +25,11 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <script>
   /* Caducidad: la propuesta se ve 10 días desde su envío (el día de envío cuenta). PROVISIONAL, como si se
-     enviara el 26-oct-2026: visible hasta el miércoles 4 de noviembre de 2026 a las 23:59 de Madrid
-     (5-nov 00:00 CET = 4-nov 23:00 UTC). Ajustar al día real de envío. En local (file://) no caduca;
+     enviara el 27-oct-2026: visible hasta el jueves 5 de noviembre de 2026 a las 23:59 de Madrid
+     (6-nov 00:00 CET = 5-nov 23:00 UTC). Ajustar al día real de envío. En local (file://) no caduca;
      ?caducada lo simula. */
   (function () {
-    var fin = Date.UTC(2026, 10, 4, 23, 0);
+    var fin = Date.UTC(2026, 10, 5, 23, 0);
     if (/[?&]caducada\b/.test(location.search) || (location.protocol !== 'file:' && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname) && Date.now() >= fin)) {
       document.documentElement.style.display = 'none';
       location.replace('caducada.html');
@@ -49,11 +49,11 @@
 </script>
 <link rel="preload" href="assets/fonts/gilda-display-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/urbanist.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/img/hero-cara-1280.webp" imagesrcset="assets/img/hero-cara-640.webp 640w, assets/img/hero-cara-960.webp 960w, assets/img/hero-cara-1280.webp 1280w, assets/img/hero-cara-1600.webp 1600w, assets/img/hero-cara-2000.webp 2000w, assets/img/hero-cara-2560.webp 2560w" imagesizes="(min-aspect-ratio: 6/5) and (min-width: 640px) min(100vw, calc((100svh - 76px) * 1.916)), 100vw" fetchpriority="high">
-<link rel="stylesheet" href="assets/css/base.css?v=1">
-<link rel="stylesheet" href="assets/css/home.css?v=1">
-<script src="assets/js/base.js?v=1" defer></script>
-<script src="assets/js/home.js?v=1" defer></script>
+<link rel="preload" as="image" href="assets/img/hero-cara-1280.webp" imagesrcset="assets/img/hero-cara-960.webp 960w, assets/img/hero-cara-1280.webp 1280w, assets/img/hero-cara-1600.webp 1600w, assets/img/hero-cara-2000.webp 2000w, assets/img/hero-cara-2560.webp 2560w" imagesizes="(min-width: 900px) 134vh, 130vw" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/base.css?v=2">
+<link rel="stylesheet" href="assets/css/home.css?v=2">
+<script src="assets/js/base.js?v=2" defer></script>
+<script src="assets/js/home.js?v=2" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,6 +89,18 @@
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<!-- Barra superior: el amarillo de su web, con la primera consulta y los teléfonos -->
+<div class="barra-sup">
+  <div class="barra-sup__dentro">
+    <p class="barra-sup__lema">Primera consulta gratuita y sin compromiso. Financiación a medida.</p>
+    <ul class="barra-sup__datos">
+      <li><a href="tel:+34918595382"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-telefono"/></svg><span>91 859 53 82</span></a></li>
+      <li><a data-wa="Hola, me gustaría pedir cita." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>682 937 011</span></a></li>
+      <li><a href="mailto:elenamendez-belleza@hotmail.com"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sobre"/></svg><span>elenamendez-belleza@hotmail.com</span></a></li>
+    </ul>
+  </div>
+</div>
 
 <!-- ═══════════ Cabecera fija: logo centrado, tratamientos a un lado, el centro al otro ═══════════ -->
 <header class="cab" data-cab>
@@ -150,283 +162,321 @@
 
 <main id="contenido">
 
-<!-- ═══════════ 1 · Hero «Marcaje»: su cara de marca y el marcaje del médico ═══════════ -->
+<!-- ═══════════ 1 · Hero «Órbita de luz»: su cara de marca en un arco de oro, las zonas en órbita ═══════════ -->
 <section class="hero entrando" data-hero aria-labelledby="hero-titulo">
-  <div class="hero__escena" data-escena>
-    <img class="hero__foto" data-foto
-         src="assets/img/hero-cara-1280.webp"
-         srcset="assets/img/hero-cara-640.webp 640w, assets/img/hero-cara-960.webp 960w, assets/img/hero-cara-1280.webp 1280w, assets/img/hero-cara-1600.webp 1600w, assets/img/hero-cara-2000.webp 2000w, assets/img/hero-cara-2560.webp 2560w"
-         sizes="(min-aspect-ratio: 6/5) and (min-width: 640px) min(100vw, calc((100svh - 76px) * 1.916)), 100vw"
-         width="1600" height="835" fetchpriority="high" decoding="async"
-         alt="La imagen de marca de Elena Méndez: mujer de ojos verdes con sombra azul, labios rosados y melena ondulada, la misma de su fachada">
-
-    <!-- El marcaje: anillos y puntos de lápiz blanco, en las coordenadas de la foto original (1600 × 835) -->
-    <svg class="marcaje" viewBox="0 0 1600 835" aria-hidden="true" focusable="false">
-      <g class="marca" data-zona="expresion" style="--x:365px;--y:140px">
-        <circle class="marca__onda" cx="365" cy="140" r="34"/><circle class="marca__contorno" cx="365" cy="140" r="36.5"/><circle class="marca__anillo" cx="365" cy="140" r="34"/><circle class="marca__centro" cx="365" cy="140" r="5"/>
-        <g class="marca__trazo"><circle cx="300" cy="96" r="4.5"/><circle cx="345" cy="86" r="4.5"/><circle cx="392" cy="86" r="4.5"/><circle cx="436" cy="96" r="4.5"/><circle cx="342" cy="150" r="4.5"/><circle cx="390" cy="150" r="4.5"/></g>
-      </g>
-      <g class="marca" data-zona="mirada" style="--x:482px;--y:208px">
-        <circle class="marca__onda" cx="482" cy="208" r="40"/><circle class="marca__contorno" cx="482" cy="208" r="42.5"/><circle class="marca__anillo" cx="482" cy="208" r="40"/><circle class="marca__centro" cx="482" cy="208" r="5"/>
-        <g class="marca__trazo"><circle cx="452" cy="262" r="4.5"/><circle cx="486" cy="268" r="4.5"/><circle cx="518" cy="258" r="4.5"/><circle cx="86" cy="172" r="4.5"/><circle cx="76" cy="204" r="4.5"/><circle cx="86" cy="236" r="4.5"/></g>
-      </g>
-      <g class="marca" data-zona="pomulos" style="--x:500px;--y:318px">
-        <circle class="marca__onda" cx="500" cy="318" r="32"/><circle class="marca__contorno" cx="500" cy="318" r="34.5"/><circle class="marca__anillo" cx="500" cy="318" r="32"/><circle class="marca__centro" cx="500" cy="318" r="5"/>
-        <g class="marca__trazo"><circle cx="408" cy="372" r="4"/><circle cx="428" cy="360" r="4"/><circle cx="448" cy="348" r="4"/><circle cx="468" cy="337" r="4"/><circle cx="487" cy="327" r="4"/><circle cx="506" cy="317" r="4"/><circle cx="524" cy="307" r="4"/><path d="M516 296 L540 299 L526 318" /></g>
-      </g>
-      <g class="marca" data-zona="piel" style="--x:470px;--y:412px">
-        <circle class="marca__onda" cx="470" cy="412" r="30"/><circle class="marca__contorno" cx="470" cy="412" r="32.5"/><circle class="marca__anillo" cx="470" cy="412" r="30"/><circle class="marca__centro" cx="470" cy="412" r="5"/>
-        <g class="marca__trazo"><circle cx="118" cy="330" r="4"/><circle cx="148" cy="330" r="4"/><circle cx="178" cy="330" r="4"/><circle cx="118" cy="360" r="4"/><circle cx="148" cy="360" r="4"/><circle cx="178" cy="360" r="4"/><circle cx="118" cy="390" r="4"/><circle cx="148" cy="390" r="4"/><circle cx="178" cy="390" r="4"/></g>
-      </g>
-      <g class="marca" data-zona="labios" style="--x:352px;--y:540px">
-        <circle class="marca__onda" cx="352" cy="540" r="44"/><circle class="marca__contorno" cx="352" cy="540" r="46.5"/><circle class="marca__anillo" cx="352" cy="540" r="44"/><circle class="marca__centro" cx="352" cy="540" r="5"/>
-        <g class="marca__trazo"><circle cx="276" cy="512" r="4"/><circle cx="312" cy="500" r="4"/><circle cx="350" cy="498" r="4"/><circle cx="390" cy="500" r="4"/><circle cx="428" cy="506" r="4"/><circle cx="300" cy="588" r="4"/><circle cx="350" cy="598" r="4"/><circle cx="400" cy="586" r="4"/></g>
-      </g>
-      <g class="marca" data-zona="ovalo" style="--x:470px;--y:632px">
-        <circle class="marca__onda" cx="470" cy="632" r="32"/><circle class="marca__contorno" cx="470" cy="632" r="34.5"/><circle class="marca__anillo" cx="470" cy="632" r="32"/><circle class="marca__centro" cx="470" cy="632" r="5"/>
-        <g class="marca__trazo"><circle cx="404" cy="694" r="4"/><circle cx="426" cy="678" r="4"/><circle cx="446" cy="658" r="4"/><circle cx="463" cy="636" r="4"/><circle cx="478" cy="612" r="4"/><circle cx="492" cy="588" r="4"/><circle cx="505" cy="563" r="4"/><circle cx="517" cy="538" r="4"/><path d="M503 530 L522 515 L530 538" /></g>
-      </g>
-    </svg>
-
-    <!-- Las zonas: en escritorio, etiquetas sobre la foto unidas a su anillo; en móvil, una fila bajo la foto -->
-    <ul class="zonas" aria-label="¿Qué te gustaría mejorar?">
-      <li class="zona" data-zona="expresion" style="--x:22.81%;--y:16.77%;--rx:2.125%"><span class="zona__linea" aria-hidden="true"></span><button class="zona__boton" type="button" aria-pressed="false" aria-controls="zona-panel">Expresión</button></li>
-      <li class="zona" data-zona="mirada" style="--x:30.13%;--y:24.91%;--rx:2.500%"><span class="zona__linea" aria-hidden="true"></span><button class="zona__boton" type="button" aria-pressed="true" aria-controls="zona-panel">Mirada</button></li>
-      <li class="zona" data-zona="pomulos" style="--x:31.25%;--y:38.08%;--rx:2.000%"><span class="zona__linea" aria-hidden="true"></span><button class="zona__boton" type="button" aria-pressed="false" aria-controls="zona-panel">Pómulos</button></li>
-      <li class="zona" data-zona="piel" style="--x:29.38%;--y:49.34%;--rx:1.875%"><span class="zona__linea" aria-hidden="true"></span><button class="zona__boton" type="button" aria-pressed="false" aria-controls="zona-panel">Piel</button></li>
-      <li class="zona" data-zona="labios" style="--x:22%;--y:64.67%;--rx:2.750%"><span class="zona__linea" aria-hidden="true"></span><button class="zona__boton" type="button" aria-pressed="false" aria-controls="zona-panel">Labios</button></li>
-      <li class="zona" data-zona="ovalo" style="--x:29.38%;--y:75.69%;--rx:2.000%"><span class="zona__linea" aria-hidden="true"></span><button class="zona__boton" type="button" aria-pressed="false" aria-controls="zona-panel">Óvalo</button></li>
-    </ul>
+  <div class="hero__fondo" aria-hidden="true">
+    <span class="hero__brillo hero__brillo--oro"></span>
+    <span class="hero__brillo hero__brillo--rosa"></span>
+    <div class="hero__fantasma" data-bucle><span>Medicina estética y belleza&nbsp;</span><span>Medicina estética y belleza&nbsp;</span></div>
+    <span class="chispa" style="--x:6%;--d:13s;--t:.2s;--s:4px"></span>
+    <span class="chispa" style="--x:14%;--d:17s;--t:4s;--s:3px"></span>
+    <span class="chispa" style="--x:23%;--d:12s;--t:7s;--s:5px"></span>
+    <span class="chispa" style="--x:31%;--d:15s;--t:2s;--s:3px"></span>
+    <span class="chispa" style="--x:44%;--d:18s;--t:9s;--s:4px"></span>
+    <span class="chispa" style="--x:52%;--d:14s;--t:1s;--s:3px"></span>
+    <span class="chispa" style="--x:61%;--d:16s;--t:6s;--s:5px"></span>
+    <span class="chispa" style="--x:69%;--d:12s;--t:3s;--s:3px"></span>
+    <span class="chispa" style="--x:77%;--d:19s;--t:8s;--s:4px"></span>
+    <span class="chispa" style="--x:84%;--d:13s;--t:5s;--s:3px"></span>
+    <span class="chispa" style="--x:91%;--d:16s;--t:10s;--s:5px"></span>
+    <span class="chispa" style="--x:97%;--d:14s;--t:2.5s;--s:3px"></span>
   </div>
 
-  <div class="hero__texto">
-    <h1 class="hero__titulo" id="hero-titulo">
-      <span class="visual-oculto">Medicina estética en Torrelodones: </span>
-      <span class="hero__frases" aria-hidden="true" data-frases>
-        <span class="hero__frase es-activa" data-zona="mirada"><span>Rejuvenece</span> <span>tu mirada</span></span>
-        <span class="hero__frase" data-zona="pomulos"><span>Eleva</span> <span>tus pómulos</span></span>
-        <span class="hero__frase" data-zona="piel"><span>Ilumina</span> <span>tu piel</span></span>
-        <span class="hero__frase" data-zona="labios"><span>Realza</span> <span>tus labios</span></span>
-        <span class="hero__frase" data-zona="ovalo"><span>Redefine</span> <span>tu óvalo</span></span>
-        <span class="hero__frase" data-zona="expresion"><span>Suaviza</span> <span>tu expresión</span></span>
-      </span>
-      <span class="visual-oculto">rejuvenece tu mirada, eleva tus pómulos, ilumina tu piel, realza tus labios, redefine tu óvalo y suaviza tu expresión</span>
-      <span class="hero__fijo">sin cirugía.</span>
-    </h1>
-    <p class="hero__entradilla">Centro médico estético en Torrelodones desde 2014. Médicos con máster, primeras marcas y tu primera consulta, gratis.</p>
-    <p class="hero__panel" id="zona-panel" aria-live="polite" data-panel><strong>Para tu mirada:</strong> ojeras sin cirugía, patas de gallo, bolsas, pestañas y cejas.</p>
-    <div class="acciones hero__acciones">
-      <a class="boton boton--principal" data-wa="Hola, me gustaría pedir una primera consulta gratuita." href="https://wa.me/34682937011?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20primera%20consulta%20gratuita." target="_blank" rel="noopener">
-        <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pedir primera consulta</span>
-      </a>
-      <a class="boton boton--linea hero__llamar" href="tel:+34918595382" aria-label="Llamar al 91 859 53 82">
-        <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-telefono"/></svg><span class="solo-ancho">91 859 53 82</span><span class="solo-estrecho">Llamar</span>
-      </a>
+  <div class="hero__dentro">
+    <div class="hero__texto">
+      <h1 class="hero__titulo" id="hero-titulo">
+        <span class="visual-oculto">Medicina estética en Torrelodones: </span>
+        <span class="hero__frases" aria-hidden="true" data-frases>
+          <span class="hero__frase es-activa" data-zona="mirada"><span>Rejuvenece</span><span>tu mirada</span></span>
+          <span class="hero__frase" data-zona="labios"><span>Realza</span><span>tus labios</span></span>
+          <span class="hero__frase" data-zona="ovalo"><span>Redefine</span><span>tu óvalo</span></span>
+          <span class="hero__frase" data-zona="piel"><span>Ilumina</span><span>tu piel</span></span>
+          <span class="hero__frase" data-zona="pomulos"><span>Eleva</span><span>tus pómulos</span></span>
+          <span class="hero__frase" data-zona="expresion"><span>Suaviza</span><span>tu expresión</span></span>
+        </span>
+        <span class="visual-oculto">rejuvenece tu mirada, realza tus labios, redefine tu óvalo, ilumina tu piel, eleva tus pómulos y suaviza tu expresión</span>
+        <span class="hero__fijo">sin cirugía.</span>
+      </h1>
+      <p class="hero__entradilla">Centro médico estético en Torrelodones desde 2014. Médicos con máster, primeras marcas y tu primera consulta, gratis.</p>
+      <p class="hero__panel" id="zona-panel" aria-live="polite" data-panel><strong>Para tu mirada:</strong> ojeras sin cirugía, patas de gallo, bolsas, pestañas y cejas.</p>
+      <div class="acciones hero__acciones">
+        <a class="boton boton--oro" data-wa="Hola, me gustaría pedir una primera consulta gratuita." href="https://wa.me/34682937011?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20primera%20consulta%20gratuita." target="_blank" rel="noopener">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pedir primera consulta gratis</span>
+        </a>
+        <a class="boton boton--linea-clara hero__llamar" href="tel:+34918595382" aria-label="Llamar al 91 859 53 82">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-telefono"/></svg><span class="solo-ancho">91 859 53 82</span>
+        </a>
+        <a class="enlace enlace--claro hero__promos" href="#novedades">Ver promociones</a>
+      </div>
+      <div class="hero__confianza">
+        <ul class="insignias-mini" aria-label="Acreditaciones">
+          <li><img src="assets/img/insignia-indiba-200.webp" width="200" height="200" alt="Centro Indiba Profesional" decoding="async"></li>
+          <li><img src="assets/img/insignia-capsula-200.webp" width="200" height="200" alt="La Cápsula del Tiempo, BDR" decoding="async"></li>
+          <li><img src="assets/img/insignia-mesoestetic-200.webp" width="200" height="200" alt="Mesoestetic, centro certificado en despigmentación" decoding="async"></li>
+          <li><img src="assets/img/insignia-premiados-200.webp" width="200" height="200" alt="Premiados por la Asociación Española de Profesionales de la Imagen" decoding="async"></li>
+        </ul>
+      </div>
     </div>
-    <div class="hero__confianza">
-      <a class="nota-treatwell" href="https://www.treatwell.es/establecimiento/centro-medico-estetico-elena-mendez/" target="_blank" rel="noopener" aria-label="4,7 de 5 en Treatwell, con 298 opiniones">
-        <span class="nota-treatwell__cifra">4,7</span>
-        <span class="estrellas" aria-hidden="true"><svg viewBox="0 0 120 22"><use href="#i-estrellas"/></svg></span>
-        <span class="nota-treatwell__texto">298 opiniones en Treatwell</span>
+
+    <div class="hero__escenario" data-escenario>
+      <div class="arco" data-arco>
+        <div class="arco__ventana">
+          <img class="arco__foto"
+               src="assets/img/hero-cara-1280.webp"
+               srcset="assets/img/hero-cara-960.webp 960w, assets/img/hero-cara-1280.webp 1280w, assets/img/hero-cara-1600.webp 1600w, assets/img/hero-cara-2000.webp 2000w, assets/img/hero-cara-2560.webp 2560w"
+               sizes="(min-width: 900px) 134vh, 130vw"
+               width="1600" height="835" fetchpriority="high" decoding="async"
+               alt="La imagen de marca de Elena Méndez: mujer de ojos verdes con sombra azul, labios rosados y melena ondulada, la misma de su fachada">
+          <!-- El marcaje, en las coordenadas de la foto original: el arco enseña de x 27 a 653 -->
+          <svg class="marcaje" viewBox="27 0 626.25 835" aria-hidden="true" focusable="false">
+            <g class="marca" data-zona="expresion"><circle class="marca__onda" cx="365" cy="140" r="34"/><circle class="marca__contorno" cx="365" cy="140" r="36.5"/><circle class="marca__anillo" cx="365" cy="140" r="34"/><circle class="marca__centro" cx="365" cy="140" r="5"/><g class="marca__trazo"><circle cx="300" cy="96" r="4.5"/><circle cx="345" cy="86" r="4.5"/><circle cx="392" cy="86" r="4.5"/><circle cx="436" cy="96" r="4.5"/><circle cx="342" cy="150" r="4.5"/><circle cx="390" cy="150" r="4.5"/></g></g>
+            <g class="marca" data-zona="mirada"><circle class="marca__onda" cx="482" cy="208" r="40"/><circle class="marca__contorno" cx="482" cy="208" r="42.5"/><circle class="marca__anillo" cx="482" cy="208" r="40"/><circle class="marca__centro" cx="482" cy="208" r="5"/><g class="marca__trazo"><circle cx="452" cy="262" r="4.5"/><circle cx="486" cy="268" r="4.5"/><circle cx="518" cy="258" r="4.5"/><circle cx="86" cy="172" r="4.5"/><circle cx="76" cy="204" r="4.5"/><circle cx="86" cy="236" r="4.5"/></g></g>
+            <g class="marca" data-zona="pomulos"><circle class="marca__onda" cx="500" cy="318" r="32"/><circle class="marca__contorno" cx="500" cy="318" r="34.5"/><circle class="marca__anillo" cx="500" cy="318" r="32"/><circle class="marca__centro" cx="500" cy="318" r="5"/><g class="marca__trazo"><circle cx="408" cy="372" r="4"/><circle cx="428" cy="360" r="4"/><circle cx="448" cy="348" r="4"/><circle cx="468" cy="337" r="4"/><circle cx="487" cy="327" r="4"/><circle cx="506" cy="317" r="4"/><circle cx="524" cy="307" r="4"/><path d="M516 296 L540 299 L526 318"/></g></g>
+            <g class="marca" data-zona="piel"><circle class="marca__onda" cx="470" cy="412" r="30"/><circle class="marca__contorno" cx="470" cy="412" r="32.5"/><circle class="marca__anillo" cx="470" cy="412" r="30"/><circle class="marca__centro" cx="470" cy="412" r="5"/><g class="marca__trazo"><circle cx="118" cy="330" r="4"/><circle cx="148" cy="330" r="4"/><circle cx="178" cy="330" r="4"/><circle cx="118" cy="360" r="4"/><circle cx="148" cy="360" r="4"/><circle cx="178" cy="360" r="4"/><circle cx="118" cy="390" r="4"/><circle cx="148" cy="390" r="4"/><circle cx="178" cy="390" r="4"/></g></g>
+            <g class="marca" data-zona="labios"><circle class="marca__onda" cx="352" cy="540" r="44"/><circle class="marca__contorno" cx="352" cy="540" r="46.5"/><circle class="marca__anillo" cx="352" cy="540" r="44"/><circle class="marca__centro" cx="352" cy="540" r="5"/><g class="marca__trazo"><circle cx="276" cy="512" r="4"/><circle cx="312" cy="500" r="4"/><circle cx="350" cy="498" r="4"/><circle cx="390" cy="500" r="4"/><circle cx="428" cy="506" r="4"/><circle cx="300" cy="588" r="4"/><circle cx="350" cy="598" r="4"/><circle cx="400" cy="586" r="4"/></g></g>
+            <g class="marca" data-zona="ovalo"><circle class="marca__onda" cx="470" cy="632" r="32"/><circle class="marca__contorno" cx="470" cy="632" r="34.5"/><circle class="marca__anillo" cx="470" cy="632" r="32"/><circle class="marca__centro" cx="470" cy="632" r="5"/><g class="marca__trazo"><circle cx="404" cy="694" r="4"/><circle cx="426" cy="678" r="4"/><circle cx="446" cy="658" r="4"/><circle cx="463" cy="636" r="4"/><circle cx="478" cy="612" r="4"/><circle cx="492" cy="588" r="4"/><circle cx="505" cy="563" r="4"/><circle cx="517" cy="538" r="4"/><path d="M503 530 L522 515 L530 538"/></g></g>
+          </svg>
+          <span class="arco__escaner" aria-hidden="true"><i></i></span>
+          <span class="arco__lama arco__lama--izq" aria-hidden="true"></span>
+          <span class="arco__lama arco__lama--der" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <!-- Las seis zonas giran alrededor del arco; la que pasa por delante cambia el titular -->
+      <ul class="orbita" data-orbita aria-label="¿Qué te gustaría mejorar?">
+        <li class="astro" data-zona="mirada"><button class="astro__boton" type="button" aria-pressed="true" aria-controls="zona-panel"><span class="astro__cuerpo">Mirada</span></button></li>
+        <li class="astro" data-zona="labios"><button class="astro__boton" type="button" aria-pressed="false" aria-controls="zona-panel"><span class="astro__cuerpo">Labios</span></button></li>
+        <li class="astro" data-zona="ovalo"><button class="astro__boton" type="button" aria-pressed="false" aria-controls="zona-panel"><span class="astro__cuerpo">Óvalo</span></button></li>
+        <li class="astro" data-zona="piel"><button class="astro__boton" type="button" aria-pressed="false" aria-controls="zona-panel"><span class="astro__cuerpo">Piel</span></button></li>
+        <li class="astro" data-zona="pomulos"><button class="astro__boton" type="button" aria-pressed="false" aria-controls="zona-panel"><span class="astro__cuerpo">Pómulos</span></button></li>
+        <li class="astro" data-zona="expresion"><button class="astro__boton" type="button" aria-pressed="false" aria-controls="zona-panel"><span class="astro__cuerpo">Expresión</span></button></li>
+      </ul>
+
+      <a class="flota flota--nota" href="https://www.treatwell.es/establecimiento/centro-medico-estetico-elena-mendez/" target="_blank" rel="noopener" aria-label="4,7 de 5 en Treatwell, con 298 opiniones">
+        <span class="flota__cuerpo"><span class="flota__cifra">4,7</span><span class="estrellas" aria-hidden="true"><svg viewBox="0 0 120 22"><use href="#i-estrellas"/></svg></span><span class="flota__texto">298 opiniones</span></span>
       </a>
-      <ul class="insignias-mini" aria-label="Acreditaciones">
-        <li><img src="assets/img/insignia-indiba-200.webp" width="200" height="200" alt="Centro Indiba Profesional" loading="lazy" decoding="async"></li>
-        <li><img src="assets/img/insignia-capsula-200.webp" width="200" height="200" alt="La Cápsula del Tiempo, BDR" loading="lazy" decoding="async"></li>
-        <li><img src="assets/img/insignia-mesoestetic-200.webp" width="200" height="200" alt="Mesoestetic, centro certificado en despigmentación" loading="lazy" decoding="async"></li>
-        <li><img src="assets/img/insignia-premiados-200.webp" width="200" height="200" alt="Premiados por la Asociación Española de Profesionales de la Imagen" loading="lazy" decoding="async"></li>
+      <a class="flota flota--consulta" data-wa="Hola, me gustaría pedir una primera consulta gratuita." href="https://wa.me/34682937011" target="_blank" rel="noopener">
+        <span class="flota__cuerpo"><span class="flota__punto" aria-hidden="true"></span><span class="flota__fuerte">Primera consulta</span><span class="flota__texto">gratis y sin compromiso</span></span>
+      </a>
+      <div class="flota flota--anos">
+        <span class="flota__cuerpo"><span class="flota__fuerte">Desde 2014</span><span class="flota__texto">en Torrelodones</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cinta de promociones con su precio -->
+  <div class="hero__cinta" aria-label="Promociones del momento">
+    <div class="hero__cinta-pista" data-bucle data-duplica>
+      <ul class="hero__cinta-grupo">
+        <li><a data-wa="Hola, me interesa el Indiba Edna Pro Max." href="https://wa.me/34682937011" target="_blank" rel="noopener">Indiba Edna Pro Max <b>novedad</b></a></li>
+        <li><a data-wa="Hola, me interesa el HIFU." href="https://wa.me/34682937011" target="_blank" rel="noopener">HIFU <b>desde 99&nbsp;€</b></a></li>
+        <li><a data-wa="Hola, me interesa la depilación láser." href="https://wa.me/34682937011" target="_blank" rel="noopener">Depilación láser <b>desde 19,90&nbsp;€</b></a></li>
+        <li><a data-wa="Hola, me interesa la eliminación de manchas o tatuajes con láser." href="https://wa.me/34682937011" target="_blank" rel="noopener">Manchas y tatuajes <b>desde 69&nbsp;€</b></a></li>
+        <li><a data-wa="Hola, me interesa el Endolift." href="https://wa.me/34682937011" target="_blank" rel="noopener">Endolift <b>sin cirugía</b></a></li>
+        <li><a data-wa="Hola, me interesan los exosomas." href="https://wa.me/34682937011" target="_blank" rel="noopener">Exosomas <b>medicina regenerativa</b></a></li>
+        <li><a data-wa="Hola, me gustaría pedir una primera consulta gratuita." href="https://wa.me/34682937011" target="_blank" rel="noopener">Primera consulta <b>gratis</b></a></li>
+        <li><a data-wa="Hola, me gustaría información sobre la financiación." href="https://wa.me/34682937011" target="_blank" rel="noopener">Financiación <b>a medida</b></a></li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ 2 · Novedades y promociones: la carta y la vitrina ═══════════ -->
-<section class="seccion novedades" aria-labelledby="nov-titulo" data-novedades>
+<!-- ═══════════ 2 · Novedades y promociones: carrusel 3D ═══════════ -->
+<section class="seccion novedades" id="novedades" aria-labelledby="nov-titulo" data-novedades>
   <div class="contenedor">
-    <div class="sec-cabeza">
+    <div class="sec-cabeza sec-cabeza--centro">
       <h2 class="titulo-2" id="nov-titulo">Novedades y promociones</h2>
       <p class="sec-cabeza__texto">Lo último que ha llegado al centro y las promociones del momento. Pregunta por cualquiera, sin compromiso.</p>
     </div>
-    <div class="nov">
-      <div class="nov__vitrina" data-vitrina>
-        <div class="nov__marco">
-          <div class="nov__medio es-activo" data-medio="0">
-            <video class="nov__video" muted loop playsinline preload="none" poster="assets/img/nov-indiba-960.webp" width="960" height="540" aria-label="Presentación del Indiba Edna Pro Max">
-              <source src="assets/video/indiba-edna-pro-max.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="nov__medio" data-medio="1">
-            <video class="nov__video" muted loop playsinline preload="none" poster="assets/img/nov-endolift-540.webp" width="540" height="960" aria-label="Tratamiento de Endolift en una cabina de Elena Méndez">
-              <source src="assets/video/endolift.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="nov__medio" data-medio="2"><img data-src="assets/img/nov-exosomas-368.webp" data-srcset="assets/img/nov-exosomas-368.webp 368w, assets/img/nov-exosomas-736.webp 736w" sizes="(min-width: 900px) 34vw, 80vw" width="368" height="371" alt="Ilustración de exosomas, nanopartículas para la regeneración de la piel" decoding="async"></div>
-          <div class="nov__medio" data-medio="3"><img data-src="assets/img/nov-hifu-500.webp" data-srcset="assets/img/nov-hifu-500.webp 500w, assets/img/nov-hifu-800.webp 800w" sizes="(min-width: 900px) 34vw, 80vw" width="500" height="699" alt="Cartel de HIFU: una zona 99 euros, facial completo 249 euros" decoding="async"></div>
-          <div class="nov__medio" data-medio="4"><img data-src="assets/img/nov-manchas-480.webp" data-srcset="assets/img/nov-manchas-480.webp 480w, assets/img/nov-manchas-717.webp 717w" sizes="(min-width: 900px) 34vw, 80vw" width="717" height="738" alt="Cartel de eliminación de manchas y tatuajes con láser: zona pequeña 69 euros, mediana 89, grande 119" decoding="async"></div>
-          <div class="nov__medio" data-medio="5"><img data-src="assets/img/nov-depilacion-480.webp" data-srcset="assets/img/nov-depilacion-480.webp 480w, assets/img/nov-depilacion-759.webp 759w" sizes="(min-width: 900px) 34vw, 80vw" width="759" height="829" alt="Cartel de depilación con doble sistema, láser de diodo e IPL SHR: zona pequeña 19,90 euros" decoding="async"></div>
-          <div class="nov__medio" data-medio="6"><img data-src="assets/img/nov-labios-480.webp" data-srcset="assets/img/nov-labios-480.webp 480w, assets/img/nov-labios-811.webp 811w" sizes="(min-width: 900px) 34vw, 80vw" width="811" height="811" alt="Labios antes y después de un tratamiento con ácido hialurónico" decoding="async"></div>
-          <div class="nov__medio" data-medio="7"><img data-src="assets/img/nov-capsula-315.webp" data-srcset="assets/img/nov-capsula-315.webp 315w, assets/img/nov-capsula-630.webp 630w" sizes="(min-width: 900px) 24vw, 60vw" width="315" height="387" alt="La Cápsula del Tiempo de BDR: el rostro recupera el aspecto de hace años en 60 minutos" decoding="async"></div>
+  </div>
+  <div class="carrusel" data-carrusel aria-roledescription="carrusel" aria-label="Novedades y promociones">
+    <div class="carrusel__escena" data-escena-carrusel>
+      <article class="tarjeta" aria-roledescription="diapositiva" aria-label="Indiba Edna Pro Max">
+        <div class="tarjeta__medio">
+          <video class="tarjeta__video" muted loop playsinline preload="none" poster="assets/img/nov-indiba-960.webp" width="960" height="540" aria-label="Presentación del Indiba Edna Pro Max"><source src="assets/video/indiba-edna-pro-max.mp4" type="video/mp4"></video>
+          <span class="tarjeta__sello">Nuevo</span>
         </div>
-        <div class="nov__pie">
-          <p class="nov__pie-nombre" aria-hidden="true" data-pie-nombre>Indiba Edna Pro Max</p>
-          <a class="boton boton--principal nov__boton" data-nov-boton data-wa="Hola, me interesa el Indiba Edna Pro Max." href="https://wa.me/34682937011?text=Hola%2C%20me%20interesa%20el%20Indiba%20Edna%20Pro%20Max." target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span class="solo-ancho">Preguntar por WhatsApp</span><span class="solo-estrecho">Preguntar</span></a>
+        <div class="tarjeta__cuerpo">
+          <h3 class="tarjeta__nombre">Indiba Edna Pro Max</h3>
+          <p class="tarjeta__linea">El Ferrari de Indiba: tecnología premium, máxima potencia en menos tiempo.</p>
+          <div class="tarjeta__pie"><span class="tarjeta__precio">Novedad 2026</span><a class="boton boton--principal tarjeta__boton" data-wa="Hola, me interesa el Indiba Edna Pro Max." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Lo quiero</span></a></div>
         </div>
-      </div>
-
-      <ol class="nov__carta" data-carta>
-        <li class="nov__item es-activo">
-          <button class="nov__fila" type="button" aria-pressed="true" data-i="0" data-wa-texto="Hola, me interesa el Indiba Edna Pro Max.">
-            <span class="nov__nombre">Indiba Edna Pro Max</span>
-            <span class="nov__sello">Nuevo</span>
-            <span class="nov__linea">El Ferrari de Indiba: tecnología premium, máxima potencia en menos tiempo.</span>
-            <span class="nov__progreso" aria-hidden="true"></span>
-          </button>
-        </li>
-        <li class="nov__item">
-          <button class="nov__fila" type="button" aria-pressed="false" data-i="1" data-wa-texto="Hola, me interesa el Endolift.">
-            <span class="nov__nombre">Endolift</span>
-            <span class="nov__sello">Nuevo</span>
-            <span class="nov__linea">Lifting facial y corporal sin cirugía: láser bajo la piel que tensa y reafirma. Sin baja.</span>
-            <span class="nov__progreso" aria-hidden="true"></span>
-          </button>
-        </li>
-        <li class="nov__item">
-          <button class="nov__fila" type="button" aria-pressed="false" data-i="2" data-wa-texto="Hola, me interesan los exosomas.">
-            <span class="nov__nombre">Exosomas</span>
-            <span class="nov__linea">Medicina regenerativa: más colágeno y elastina para una piel firme, hidratada y luminosa.</span>
-            <span class="nov__progreso" aria-hidden="true"></span>
-          </button>
-        </li>
-        <li class="nov__item">
-          <button class="nov__fila" type="button" aria-pressed="false" data-i="3" data-wa-texto="Hola, me interesa el HIFU.">
-            <span class="nov__nombre">HIFU</span>
-            <span class="nov__precio">desde 99&nbsp;€</span>
-            <span class="nov__linea">Rejuvenecimiento facial sin cirugía. Una zona 99&nbsp;€, facial completo 249&nbsp;€.</span>
-            <span class="nov__progreso" aria-hidden="true"></span>
-          </button>
-        </li>
-        <li class="nov__item">
-          <button class="nov__fila" type="button" aria-pressed="false" data-i="4" data-wa-texto="Hola, me interesa la eliminación de manchas o tatuajes con láser.">
-            <span class="nov__nombre">Manchas y tatuajes</span>
-            <span class="nov__precio">desde 69&nbsp;€</span>
-            <span class="nov__linea">Nanoláser STP y láser ND-YAG. Zona pequeña 69&nbsp;€, mediana 89&nbsp;€, grande 119&nbsp;€.</span>
-            <span class="nov__progreso" aria-hidden="true"></span>
-          </button>
-        </li>
-        <li class="nov__item">
-          <button class="nov__fila" type="button" aria-pressed="false" data-i="5" data-wa-texto="Hola, me interesa la depilación láser.">
-            <span class="nov__nombre">Depilación láser</span>
-            <span class="nov__precio">desde 19,90&nbsp;€</span>
-            <span class="nov__linea">Doble sistema, diodo SLD e IPL SHR: todo tipo de vello en todo tipo de piel.</span>
-            <span class="nov__progreso" aria-hidden="true"></span>
-          </button>
-        </li>
-        <li class="nov__item">
-          <button class="nov__fila" type="button" aria-pressed="false" data-i="6" data-wa-texto="Hola, me interesa el ácido hialurónico en labios.">
-            <span class="nov__nombre">Labios con ácido hialurónico</span>
-            <span class="nov__linea">Volumen natural y armónico. La primera consulta es gratuita.</span>
-            <span class="nov__progreso" aria-hidden="true"></span>
-          </button>
-        </li>
-        <li class="nov__item">
-          <button class="nov__fila" type="button" aria-pressed="false" data-i="7" data-wa-texto="Hola, me interesa La Cápsula del Tiempo.">
-            <span class="nov__nombre">La Cápsula del Tiempo</span>
-            <span class="nov__sello nov__sello--claro">Exclusiva</span>
-            <span class="nov__linea">Dermacéutica alemana: el rostro de hace años en 60 minutos y sin cirugía.</span>
-            <span class="nov__progreso" aria-hidden="true"></span>
-          </button>
-        </li>
-      </ol>
+      </article>
+      <article class="tarjeta" aria-roledescription="diapositiva" aria-label="HIFU">
+        <div class="tarjeta__medio"><img data-src="assets/img/nov-hifu-800.webp" width="500" height="699" alt="Cartel de HIFU: una zona 99 euros, facial completo 249 euros"></div>
+        <div class="tarjeta__cuerpo">
+          <h3 class="tarjeta__nombre">HIFU</h3>
+          <p class="tarjeta__linea">Rejuvenecimiento facial sin cirugía. Una zona 99&nbsp;€, facial completo 249&nbsp;€.</p>
+          <div class="tarjeta__pie"><span class="tarjeta__precio">desde 99&nbsp;€</span><a class="boton boton--principal tarjeta__boton" data-wa="Hola, me interesa el HIFU." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Lo quiero</span></a></div>
+        </div>
+      </article>
+      <article class="tarjeta" aria-roledescription="diapositiva" aria-label="Endolift">
+        <div class="tarjeta__medio">
+          <video class="tarjeta__video" muted loop playsinline preload="none" poster="assets/img/nov-endolift-540.webp" width="540" height="960" aria-label="Tratamiento de Endolift en una cabina de Elena Méndez"><source src="assets/video/endolift.mp4" type="video/mp4"></video>
+          <span class="tarjeta__sello">Nuevo</span>
+        </div>
+        <div class="tarjeta__cuerpo">
+          <h3 class="tarjeta__nombre">Endolift</h3>
+          <p class="tarjeta__linea">Lifting facial y corporal sin cirugía: láser bajo la piel que tensa y reafirma. Sin baja.</p>
+          <div class="tarjeta__pie"><span class="tarjeta__precio">Sin cirugía</span><a class="boton boton--principal tarjeta__boton" data-wa="Hola, me interesa el Endolift." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Lo quiero</span></a></div>
+        </div>
+      </article>
+      <article class="tarjeta" aria-roledescription="diapositiva" aria-label="Depilación láser">
+        <div class="tarjeta__medio"><img data-src="assets/img/nov-depilacion-759.webp" width="759" height="829" alt="Cartel de depilación con doble sistema, láser de diodo e IPL SHR: zona pequeña 19,90 euros"></div>
+        <div class="tarjeta__cuerpo">
+          <h3 class="tarjeta__nombre">Depilación láser</h3>
+          <p class="tarjeta__linea">Doble sistema, diodo SLD e IPL SHR: todo tipo de vello en todo tipo de piel.</p>
+          <div class="tarjeta__pie"><span class="tarjeta__precio">desde 19,90&nbsp;€</span><a class="boton boton--principal tarjeta__boton" data-wa="Hola, me interesa la depilación láser." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Lo quiero</span></a></div>
+        </div>
+      </article>
+      <article class="tarjeta" aria-roledescription="diapositiva" aria-label="Labios con ácido hialurónico">
+        <div class="tarjeta__medio"><img data-src="assets/img/nov-labios-811.webp" width="811" height="811" alt="Labios antes y después de un tratamiento con ácido hialurónico"></div>
+        <div class="tarjeta__cuerpo">
+          <h3 class="tarjeta__nombre">Labios con ácido hialurónico</h3>
+          <p class="tarjeta__linea">Volumen natural y armónico. La primera consulta es gratuita.</p>
+          <div class="tarjeta__pie"><span class="tarjeta__precio">Consulta gratis</span><a class="boton boton--principal tarjeta__boton" data-wa="Hola, me interesa el ácido hialurónico en labios." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Lo quiero</span></a></div>
+        </div>
+      </article>
+      <article class="tarjeta" aria-roledescription="diapositiva" aria-label="Manchas y tatuajes">
+        <div class="tarjeta__medio"><img data-src="assets/img/nov-manchas-717.webp" width="717" height="738" alt="Cartel de eliminación de manchas y tatuajes con láser: zona pequeña 69 euros, mediana 89, grande 119"></div>
+        <div class="tarjeta__cuerpo">
+          <h3 class="tarjeta__nombre">Manchas y tatuajes</h3>
+          <p class="tarjeta__linea">Nanoláser STP y láser ND-YAG. Zona pequeña 69&nbsp;€, mediana 89&nbsp;€, grande 119&nbsp;€.</p>
+          <div class="tarjeta__pie"><span class="tarjeta__precio">desde 69&nbsp;€</span><a class="boton boton--principal tarjeta__boton" data-wa="Hola, me interesa la eliminación de manchas o tatuajes con láser." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Lo quiero</span></a></div>
+        </div>
+      </article>
+      <article class="tarjeta" aria-roledescription="diapositiva" aria-label="Exosomas">
+        <div class="tarjeta__medio"><img data-src="assets/img/nov-exosomas-736.webp" width="368" height="371" alt="Ilustración de exosomas, nanopartículas para la regeneración de la piel"></div>
+        <div class="tarjeta__cuerpo">
+          <h3 class="tarjeta__nombre">Exosomas</h3>
+          <p class="tarjeta__linea">Medicina regenerativa: más colágeno y elastina para una piel firme, hidratada y luminosa.</p>
+          <div class="tarjeta__pie"><span class="tarjeta__precio">Regenerativa</span><a class="boton boton--principal tarjeta__boton" data-wa="Hola, me interesan los exosomas." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Lo quiero</span></a></div>
+        </div>
+      </article>
+      <article class="tarjeta" aria-roledescription="diapositiva" aria-label="La Cápsula del Tiempo">
+        <div class="tarjeta__medio"><img data-src="assets/img/nov-capsula-630.webp" width="315" height="387" alt="La Cápsula del Tiempo de BDR: el rostro recupera el aspecto de hace años en 60 minutos"><span class="tarjeta__sello tarjeta__sello--claro">Exclusiva</span></div>
+        <div class="tarjeta__cuerpo">
+          <h3 class="tarjeta__nombre">La Cápsula del Tiempo</h3>
+          <p class="tarjeta__linea">Dermacéutica alemana: el rostro de hace años en 60 minutos y sin cirugía.</p>
+          <div class="tarjeta__pie"><span class="tarjeta__precio">60 minutos</span><a class="boton boton--principal tarjeta__boton" data-wa="Hola, me interesa La Cápsula del Tiempo." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Lo quiero</span></a></div>
+        </div>
+      </article>
     </div>
+    <div class="carrusel__control">
+      <button class="carrusel__flecha" type="button" data-carrusel-ant aria-label="Novedad anterior"><span class="carrusel__flecha-cuerpo"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-izquierda"/></svg></span></button>
+      <ol class="carrusel__puntos" data-carrusel-puntos aria-hidden="true"></ol>
+      <button class="carrusel__flecha" type="button" data-carrusel-sig aria-label="Novedad siguiente"><span class="carrusel__flecha-cuerpo"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-derecha"/></svg></span></button>
+    </div>
+  </div>
+  <div class="contenedor">
     <div class="acciones acciones--centro">
+      <a class="boton boton--principal" data-wa="Hola, me gustaría información sobre las promociones del mes." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Preguntar por las promociones</span></a>
       <a class="boton boton--linea" href="https://elenamendez-belleza.com/promociones-medicina-estetica/">Todas las novedades</a>
       <a class="boton boton--linea" href="https://elenamendez-belleza.com/promociones-estetica/">Promociones de estética</a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ 3 · Tratamientos: la foto de cada página de su web ═══════════ -->
-<section class="seccion tratamientos" aria-labelledby="trat-titulo">
+<!-- ═══════════ 3 · Tratamientos: índice con la foto de cada página flotando junto al cursor ═══════════ -->
+<section class="seccion tratamientos" aria-labelledby="trat-titulo" data-tratamientos>
   <div class="contenedor">
-    <div class="sec-cabeza">
+    <div class="sec-cabeza sec-cabeza--fila">
       <h2 class="titulo-2" id="trat-titulo">Tratamientos para cara, cuerpo y bienestar</h2>
+      <a class="boton boton--linea" href="https://elenamendez-belleza.com/servicios/">Ver medicina estética</a>
     </div>
-    <ul class="mosaico" data-mosaico>
-      <li class="pieza pieza--ancha">
-        <a class="pieza__enlace" href="https://elenamendez-belleza.com/servicios/">
-          <span class="pieza__foto encuadre"><img data-foto src="assets/img/cat-medicina-745.webp" srcset="assets/img/cat-medicina-400.webp 400w, assets/img/cat-medicina-745.webp 745w" sizes="(min-width: 900px) 46vw, 92vw" width="745" height="478" alt="Una doctora explica un tratamiento a una paciente en la consulta" loading="lazy" decoding="async"></span>
-          <span class="pieza__texto">
-            <span class="pieza__titulo">Medicina estética</span>
-            <span class="pieza__lista">Arrugas dinámicas, ácido hialurónico, ojeras, hilos tensores, varices, plasma rico en plaquetas y dieta proteinada con control médico.</span>
-            <span class="pieza__ir">Ver medicina estética</span>
-          </span>
+    <ul class="indice" data-indice>
+      <li class="indice__fila">
+        <a class="indice__enlace" href="https://elenamendez-belleza.com/servicios/" data-flota="assets/img/cat-medicina-745.webp" data-flota-r="1.559">
+          <span class="indice__miniatura"><img data-foto src="assets/img/cat-medicina-400.webp" width="745" height="478" alt="Una doctora explica un tratamiento a una paciente en la consulta" loading="lazy" decoding="async"></span>
+          <span class="indice__nombre">Medicina estética</span>
+          <span class="indice__lista">Arrugas dinámicas, ácido hialurónico, ojeras, hilos tensores, varices, plasma rico en plaquetas y dieta proteinada con control médico.</span>
         </a>
+        <a class="boton boton--linea indice__cita" data-wa="Hola, me gustaría pedir cita para medicina estética." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pedir cita</span></a>
       </li>
-      <li class="pieza pieza--ancha">
-        <a class="pieza__enlace" href="https://elenamendez-belleza.com/faciales/">
-          <span class="pieza__foto encuadre"><img data-foto src="assets/img/cat-faciales-1000.webp" srcset="assets/img/cat-faciales-500.webp 500w, assets/img/cat-faciales-1000.webp 1000w" sizes="(min-width: 900px) 46vw, 92vw" width="500" height="325" alt="Rostro de mujer con la piel luminosa y gotas de agua" loading="lazy" decoding="async"></span>
-          <span class="pieza__texto">
-            <span class="pieza__titulo">Tratamientos faciales</span>
-            <span class="pieza__lista">Indiba facial, mesoterapia, transdermoterapia «Roller», radiofrecuencia, peelings y rejuvenecimiento con IPL.</span>
-            <span class="pieza__ir">Ver faciales</span>
-          </span>
+      <li class="indice__fila">
+        <a class="indice__enlace" href="https://elenamendez-belleza.com/faciales/" data-flota="assets/img/cat-faciales-1000.webp" data-flota-r="1.538">
+          <span class="indice__miniatura"><img data-foto src="assets/img/cat-faciales-500.webp" width="500" height="325" alt="Rostro de mujer con la piel luminosa y gotas de agua" loading="lazy" decoding="async"></span>
+          <span class="indice__nombre">Tratamientos faciales</span>
+          <span class="indice__lista">Indiba facial, mesoterapia, transdermoterapia «Roller», radiofrecuencia, peelings y rejuvenecimiento con IPL.</span>
         </a>
+        <a class="boton boton--linea indice__cita" data-wa="Hola, me gustaría pedir cita para un tratamiento facial." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pedir cita</span></a>
       </li>
-      <li class="pieza">
-        <a class="pieza__enlace" href="https://elenamendez-belleza.com/corporales/">
-          <span class="pieza__foto encuadre"><img data-foto src="assets/img/cat-corporales-570.webp" srcset="assets/img/cat-corporales-570.webp 570w, assets/img/cat-corporales-1140.webp 1140w" sizes="(min-width: 900px) 30vw, 92vw" width="570" height="300" alt="Cintura de mujer con una cinta métrica" loading="lazy" decoding="async"></span>
-          <span class="pieza__texto">
-            <span class="pieza__titulo">Corporales</span>
-            <span class="pieza__lista">Ultracavitación, vacumterapia, radiofrecuencia, mesoterapia, presoterapia y Bodyshock.</span>
-            <span class="pieza__ir">Ver corporales</span>
-          </span>
+      <li class="indice__fila">
+        <a class="indice__enlace" href="https://elenamendez-belleza.com/corporales/" data-flota="assets/img/cat-corporales-1140.webp" data-flota-r="1.9">
+          <span class="indice__miniatura"><img data-foto src="assets/img/cat-corporales-570.webp" width="570" height="300" alt="Cintura de mujer con una cinta métrica" loading="lazy" decoding="async"></span>
+          <span class="indice__nombre">Corporales</span>
+          <span class="indice__lista">Ultracavitación, vacumterapia, radiofrecuencia, mesoterapia, presoterapia y Bodyshock.</span>
         </a>
+        <a class="boton boton--linea indice__cita" data-wa="Hola, me gustaría pedir cita para un tratamiento corporal." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pedir cita</span></a>
       </li>
-      <li class="pieza">
-        <a class="pieza__enlace" href="https://elenamendez-belleza.com/depilacion-laser/">
-          <span class="pieza__foto encuadre"><img data-foto src="assets/img/cat-laser-570.webp" srcset="assets/img/cat-laser-570.webp 570w, assets/img/cat-laser-1140.webp 1140w" sizes="(min-width: 900px) 30vw, 92vw" width="570" height="300" alt="Mujer de perfil con un vestido negro" loading="lazy" decoding="async"></span>
-          <span class="pieza__texto">
-            <span class="pieza__titulo">Depilación láser</span>
-            <span class="pieza__lista">Láser de diodo, IPL SHR y cera. Cualquier tipo de pelo y de piel, incluso pieles oscuras.</span>
-            <span class="pieza__ir">Ver depilación</span>
-          </span>
+      <li class="indice__fila">
+        <a class="indice__enlace" href="https://elenamendez-belleza.com/depilacion-laser/" data-flota="assets/img/cat-laser-1140.webp" data-flota-r="1.9">
+          <span class="indice__miniatura"><img data-foto src="assets/img/cat-laser-570.webp" width="570" height="300" alt="Mujer de perfil con un vestido negro" loading="lazy" decoding="async"></span>
+          <span class="indice__nombre">Depilación láser</span>
+          <span class="indice__lista">Láser de diodo, IPL SHR y cera. Cualquier tipo de pelo y de piel, incluso pieles oscuras.</span>
         </a>
+        <a class="boton boton--linea indice__cita" data-wa="Hola, me gustaría pedir cita para depilación láser." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pedir cita</span></a>
       </li>
-      <li class="pieza">
-        <a class="pieza__enlace" href="https://elenamendez-belleza.com/micropigmentacion/">
-          <span class="pieza__foto encuadre"><img data-foto src="assets/img/cat-micropigmentacion-570.webp" srcset="assets/img/cat-micropigmentacion-570.webp 570w, assets/img/cat-micropigmentacion-1140.webp 1140w" sizes="(min-width: 900px) 30vw, 92vw" width="570" height="300" alt="Mirada con pestañas largas y cejas definidas" loading="lazy" decoding="async"></span>
-          <span class="pieza__texto">
-            <span class="pieza__titulo">Micropigmentación y pestañas</span>
-            <span class="pieza__lista">Cejas pelo a pelo, eyeliner, labios, pestañas volumen ruso, permanente y tinte.</span>
-            <span class="pieza__ir">Ver micropigmentación</span>
-          </span>
+      <li class="indice__fila">
+        <a class="indice__enlace" href="https://elenamendez-belleza.com/micropigmentacion/" data-flota="assets/img/cat-micropigmentacion-1140.webp" data-flota-r="1.9">
+          <span class="indice__miniatura"><img data-foto src="assets/img/cat-micropigmentacion-570.webp" width="570" height="300" alt="Mirada con pestañas largas y cejas definidas" loading="lazy" decoding="async"></span>
+          <span class="indice__nombre">Micropigmentación y pestañas</span>
+          <span class="indice__lista">Cejas pelo a pelo, eyeliner, labios, pestañas volumen ruso, permanente y tinte.</span>
         </a>
+        <a class="boton boton--linea indice__cita" data-wa="Hola, me gustaría pedir cita para micropigmentación o pestañas." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pedir cita</span></a>
       </li>
-      <li class="pieza pieza--ancha">
-        <a class="pieza__enlace" href="https://elenamendez-belleza.com/espacio-de-salud/">
-          <span class="pieza__foto encuadre"><img data-foto src="assets/img/cat-salud-1140.webp" srcset="assets/img/cat-salud-570.webp 570w, assets/img/cat-salud-1140.webp 1140w" sizes="(min-width: 900px) 46vw, 92vw" width="570" height="300" alt="Mujer recibiendo un masaje relajante en la espalda" loading="lazy" decoding="async"></span>
-          <span class="pieza__texto">
-            <span class="pieza__titulo">Espacio de salud</span>
-            <span class="pieza__lista">Masajes relajantes y terapéuticos, Kobido, piedras volcánicas, ayurveda, reiki y reflexología.</span>
-            <span class="pieza__ir">Ver espacio de salud</span>
-          </span>
+      <li class="indice__fila">
+        <a class="indice__enlace" href="https://elenamendez-belleza.com/espacio-de-salud/" data-flota="assets/img/cat-salud-1140.webp" data-flota-r="1.9">
+          <span class="indice__miniatura"><img data-foto src="assets/img/cat-salud-570.webp" width="570" height="300" alt="Mujer recibiendo un masaje relajante en la espalda" loading="lazy" decoding="async"></span>
+          <span class="indice__nombre">Espacio de salud</span>
+          <span class="indice__lista">Masajes relajantes y terapéuticos, Kobido, piedras volcánicas, ayurveda, reiki y reflexología.</span>
         </a>
+        <a class="boton boton--linea indice__cita" data-wa="Hola, me gustaría pedir cita para un masaje." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pedir cita</span></a>
       </li>
-      <li class="pieza pieza--ancha">
-        <a class="pieza__enlace" href="https://elenamendez-belleza.com/otros-tratamientos/">
-          <span class="pieza__foto encuadre"><img data-foto src="assets/img/cat-novias-1140.webp" srcset="assets/img/cat-novias-570.webp 570w, assets/img/cat-novias-1140.webp 1140w" sizes="(min-width: 900px) 46vw, 92vw" width="570" height="300" alt="Novia con velo de encaje" loading="lazy" decoding="async"></span>
-          <span class="pieza__texto">
-            <span class="pieza__titulo">Novias, manos y pies</span>
-            <span class="pieza__lista">Programas de novia y comunión, manicura y pedicura, uñas de gel y acrílico y maquillaje.</span>
-            <span class="pieza__ir">Ver novias, manos y pies</span>
-          </span>
+      <li class="indice__fila">
+        <a class="indice__enlace" href="https://elenamendez-belleza.com/otros-tratamientos/" data-flota="assets/img/cat-novias-1140.webp" data-flota-r="1.9">
+          <span class="indice__miniatura"><img data-foto src="assets/img/cat-novias-570.webp" width="570" height="300" alt="Novia con velo de encaje" loading="lazy" decoding="async"></span>
+          <span class="indice__nombre">Novias, manos y pies</span>
+          <span class="indice__lista">Programas de novia y comunión, manicura y pedicura, uñas de gel y acrílico y maquillaje.</span>
         </a>
+        <a class="boton boton--linea indice__cita" data-wa="Hola, me gustaría información sobre los programas de novia." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pedir cita</span></a>
       </li>
     </ul>
   </div>
+  <div class="flotante" aria-hidden="true" data-flotante><span class="flotante__cuerpo"><img alt="" data-flotante-a><img alt="" data-flotante-b></span></div>
 </section>
 
-<!-- ═══════════ 4 · Medicina estética, en manos de médicos (banda azul noche) ═══════════ -->
-<section class="seccion medicina" aria-labelledby="med-titulo">
+<!-- ═══════════ 4 · La banda amarilla de su web: sus tratamientos en dos cintas y la financiación ═══════════ -->
+<section class="banda" aria-labelledby="banda-titulo">
+  <div class="banda__cinta" data-bucle data-duplica aria-hidden="true">
+    <div class="banda__grupo"><span>Medicina estética</span><i></i><span>Relleno de arrugas dinámicas</span><i></i><span>Rellenos dérmicos</span><i></i><span>Ácido hialurónico</span><i></i><span>Radiesse</span><i></i><span>Hilos tensores</span><i></i><span>Relleno de ojeras</span><i></i><span>Alzamiento de pómulos</span><i></i></div>
+  </div>
+  <div class="contenedor banda__dentro">
+    <div class="banda__texto">
+      <h2 class="banda__titulo" id="banda-titulo">Tratamientos y servicios de medicina estética avanzada en Torrelodones</h2>
+      <p class="banda__frase">Financiación a medida en nuestros servicios. Consúltanos sin compromiso.</p>
+      <div class="acciones">
+        <a class="boton boton--oscuro" data-wa="Hola, me gustaría información sobre la financiación." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Consultar financiación</span></a>
+        <a class="boton boton--linea" href="tel:+34918595382"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-telefono"/></svg><span>91 859 53 82</span></a>
+      </div>
+    </div>
+    <a class="sello-cita" data-wa="Hola, me gustaría pedir cita." href="https://wa.me/34682937011" target="_blank" rel="noopener" aria-label="Pide tu cita por WhatsApp">
+      <span class="sello-cita__cuerpo">
+        <svg class="sello-cita__giro" viewBox="0 0 200 200" aria-hidden="true" data-bucle>
+          <defs><path id="sello-cita-circulo" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
+          <text><textPath href="#sello-cita-circulo" textLength="472" lengthAdjust="spacing">Pide tu cita · Primera consulta gratis · </textPath></text>
+        </svg>
+        <svg class="sello-cita__icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+      </span>
+    </a>
+  </div>
+  <div class="banda__cinta banda__cinta--inversa" data-bucle data-duplica aria-hidden="true">
+    <div class="banda__grupo"><span>Rejuvenecimiento de cuello</span><i></i><span>Rejuvenecimiento de brazos</span><i></i><span>Flacidez facial y corporal</span><i></i><span>Rejuvenecimiento de manos</span><i></i><span>Obesidad</span><i></i><span>Indiba</span><i></i><span>Dieta proteinada</span><i></i></div>
+  </div>
+</section>
+
+<!-- ═══════════ 5 · Medicina estética, en manos de médicos (banda azul noche) ═══════════ -->
+<section class="seccion medicina" aria-labelledby="med-titulo" data-medicina>
   <div class="contenedor medicina__rejilla">
     <div class="medicina__texto">
       <h2 class="titulo-2" id="med-titulo">Medicina estética, en manos de médicos</h2>
@@ -454,12 +504,14 @@
         </li>
       </ul>
       <div class="acciones">
-        <a class="boton boton--oro" data-wa="Hola, me gustaría pedir una primera consulta gratuita." href="https://wa.me/34682937011?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20primera%20consulta%20gratuita." target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pedir primera consulta</span></a>
+        <a class="boton boton--oro" data-wa="Hola, me gustaría pedir una primera consulta gratuita." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pedir primera consulta</span></a>
+        <a class="boton boton--linea-clara" href="tel:+34918595382"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-telefono"/></svg><span>Llamar</span></a>
         <a class="boton boton--linea-clara" href="https://elenamendez-belleza.com/quienes-somos/">Conoce el centro</a>
       </div>
     </div>
     <figure class="medicina__figura">
-      <span class="medicina__marco encuadre"><img class="medicina__foto" data-foto src="assets/img/medicina-960.webp" srcset="assets/img/medicina-480.webp 480w, assets/img/medicina-720.webp 720w, assets/img/medicina-960.webp 960w, assets/img/medicina-1382.webp 1382w" sizes="(min-width: 900px) 44vw, 92vw" width="1382" height="922" alt="Mujer de labios rojos sobre fondo rosa, la imagen de la sección de medicina estética de Elena Méndez" loading="lazy" decoding="async"></span>
+      <span class="medicina__marco medicina__marco--grande encuadre"><img class="medicina__foto" data-foto src="assets/img/medicina-960.webp" srcset="assets/img/medicina-480.webp 480w, assets/img/medicina-720.webp 720w, assets/img/medicina-960.webp 960w, assets/img/medicina-1382.webp 1382w" sizes="(min-width: 960px) 36vw, 80vw" width="1382" height="922" alt="Mujer de labios rojos sobre fondo rosa, la imagen de la sección de medicina estética de Elena Méndez" loading="lazy" decoding="async"></span>
+      <span class="medicina__marco medicina__marco--doctores encuadre"><img class="medicina__foto" data-foto src="assets/img/cat-medicina-745.webp" srcset="assets/img/cat-medicina-400.webp 400w, assets/img/cat-medicina-745.webp 745w" sizes="(min-width: 960px) 22vw, 54vw" width="745" height="478" alt="Una doctora explica un tratamiento a una paciente en la consulta" loading="lazy" decoding="async"></span>
       <div class="sello" aria-hidden="true">
         <svg class="sello__giro" viewBox="0 0 200 200" data-bucle>
           <defs><path id="sello-circulo" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
@@ -471,99 +523,81 @@
   </div>
 </section>
 
-<!-- ═══════════ 5 · Solo primeras marcas: medallas que giran ═══════════ -->
+<!-- ═══════════ 6 · Solo primeras marcas: medallas que entran girando como monedas ═══════════ -->
 <section class="seccion marcas" aria-labelledby="marcas-titulo">
   <div class="contenedor marcas__rejilla">
     <div class="marcas__texto">
       <h2 class="titulo-2" id="marcas-titulo">Solo primeras marcas</h2>
       <p class="sec-cabeza__texto">Trabajamos con las primeras marcas y te asesoramos para obtener el mejor resultado.</p>
+      <div class="acciones">
+        <a class="boton boton--principal" data-wa="Hola, me gustaría que me asesoraseis sobre un tratamiento." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pide que te asesoremos</span></a>
+      </div>
     </div>
     <span class="marcas__marco encuadre"><img class="marcas__foto" data-foto src="assets/img/marcas-720.webp" srcset="assets/img/marcas-480.webp 480w, assets/img/marcas-720.webp 720w, assets/img/marcas-1000.webp 1000w" sizes="(min-width: 900px) 34vw, 92vw" width="1000" height="667" alt="Productos de Mesoestetic junto a un jarrón azul" loading="lazy" decoding="async"></span>
   </div>
   <div class="contenedor">
     <ul class="medallas" data-medallas>
-      <li class="medalla">
-        <button class="medalla__carta" type="button" aria-pressed="false" aria-label="Centro Indiba Profesional: ver detalle">
-          <span class="medalla__cara"><img src="assets/img/insignia-indiba-200.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><span class="medalla__nombre">Centro Indiba Profesional</span></span>
-          <span class="medalla__dorso"><span>Nombrados centro de referencia para la zona: cumplimos los requisitos y nuestros técnicos tienen la formación oficial.</span></span>
-        </button>
-      </li>
-      <li class="medalla">
-        <button class="medalla__carta" type="button" aria-pressed="false" aria-label="Despigmentación Mesoestetic: ver detalle">
-          <span class="medalla__cara"><img src="assets/img/insignia-mesoestetic-200.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><span class="medalla__nombre">Despigmentación Mesoestetic</span></span>
-          <span class="medalla__dorso"><span>Centro certificado por el líder mundial: parte de su red de centros especializados en manchas.</span></span>
-        </button>
-      </li>
-      <li class="medalla">
-        <button class="medalla__carta" type="button" aria-pressed="false" aria-label="Medalla de Oro: ver detalle">
-          <span class="medalla__cara"><img src="assets/img/insignia-premiados-200.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><span class="medalla__nombre">Medalla de Oro</span></span>
-          <span class="medalla__dorso"><span>De la Asociación Española de Profesionales de la Imagen, por nuestra trayectoria y como mérito a la excelencia.</span></span>
-        </button>
-      </li>
-      <li class="medalla">
-        <button class="medalla__carta" type="button" aria-pressed="false" aria-label="La Cápsula del Tiempo: ver detalle">
-          <span class="medalla__cara"><img src="assets/img/insignia-capsula-200.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><span class="medalla__nombre">La Cápsula del Tiempo</span></span>
-          <span class="medalla__dorso"><span>Exclusiva para la zona de esta dermacéutica alemana, que solo se concede a centros que cumplen sus requisitos.</span></span>
-        </button>
-      </li>
-      <li class="medalla">
-        <button class="medalla__carta" type="button" aria-pressed="false" aria-label="Alta cosmética: ver detalle">
-          <span class="medalla__cara"><img src="assets/img/insignia-alta-cosmetica-200.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><span class="medalla__nombre">Alta cosmética</span></span>
-          <span class="medalla__dorso"><span>Carmen Navarro, BDR, Babor, Mesoestetic y Skeyndor Timeless Prodigy, en exclusiva para la zona.</span></span>
-        </button>
-      </li>
+      <li class="medalla"><button class="medalla__boton" type="button" aria-pressed="false" aria-label="Centro Indiba Profesional: ver detalle"><span class="medalla__carta">
+        <span class="medalla__cara"><img src="assets/img/insignia-indiba-200.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><span class="medalla__nombre">Centro Indiba Profesional</span></span>
+        <span class="medalla__dorso"><span>Nombrados centro de referencia para la zona: cumplimos los requisitos y nuestros técnicos tienen la formación oficial.</span></span>
+      </span></button></li>
+      <li class="medalla"><button class="medalla__boton" type="button" aria-pressed="false" aria-label="Despigmentación Mesoestetic: ver detalle"><span class="medalla__carta">
+        <span class="medalla__cara"><img src="assets/img/insignia-mesoestetic-200.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><span class="medalla__nombre">Despigmentación Mesoestetic</span></span>
+        <span class="medalla__dorso"><span>Centro certificado por el líder mundial: parte de su red de centros especializados en manchas.</span></span>
+      </span></button></li>
+      <li class="medalla"><button class="medalla__boton" type="button" aria-pressed="false" aria-label="Medalla de Oro: ver detalle"><span class="medalla__carta">
+        <span class="medalla__cara"><img src="assets/img/insignia-premiados-200.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><span class="medalla__nombre">Medalla de Oro</span></span>
+        <span class="medalla__dorso"><span>De la Asociación Española de Profesionales de la Imagen, por nuestra trayectoria y como mérito a la excelencia.</span></span>
+      </span></button></li>
+      <li class="medalla"><button class="medalla__boton" type="button" aria-pressed="false" aria-label="La Cápsula del Tiempo: ver detalle"><span class="medalla__carta">
+        <span class="medalla__cara"><img src="assets/img/insignia-capsula-200.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><span class="medalla__nombre">La Cápsula del Tiempo</span></span>
+        <span class="medalla__dorso"><span>Exclusiva para la zona de esta dermacéutica alemana, que solo se concede a centros que cumplen sus requisitos.</span></span>
+      </span></button></li>
+      <li class="medalla"><button class="medalla__boton" type="button" aria-pressed="false" aria-label="Alta cosmética: ver detalle"><span class="medalla__carta">
+        <span class="medalla__cara"><img src="assets/img/insignia-alta-cosmetica-200.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><span class="medalla__nombre">Alta cosmética</span></span>
+        <span class="medalla__dorso"><span>Carmen Navarro, BDR, Babor, Mesoestetic y Skeyndor Timeless Prodigy, en exclusiva para la zona.</span></span>
+      </span></button></li>
     </ul>
   </div>
   <div class="cinta" aria-label="Marcas con las que trabajamos">
-    <div class="cinta__pista" data-bucle>
+    <div class="cinta__pista" data-bucle data-duplica>
       <ul class="cinta__grupo"><li>Carmen Navarro</li><li>BDR</li><li>Babor</li><li>Mesoestetic</li><li>Skeyndor Timeless Prodigy</li><li>Indiba</li><li>Navapharma</li></ul>
-      <ul class="cinta__grupo" aria-hidden="true"><li>Carmen Navarro</li><li>BDR</li><li>Babor</li><li>Mesoestetic</li><li>Skeyndor Timeless Prodigy</li><li>Indiba</li><li>Navapharma</li></ul>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ 6 · Opiniones: 4,7 en Treatwell ═══════════ -->
+<!-- ═══════════ 7 · Opiniones: 4,7 en Treatwell, en dos cintas ═══════════ -->
 <section class="seccion opiniones" aria-labelledby="opi-titulo" data-opiniones>
-  <div class="contenedor opiniones__rejilla">
+  <div class="contenedor opiniones__cabeza">
+    <h2 class="opiniones__titulo" id="opi-titulo"><span class="opiniones__cifra">4,7</span><span class="opiniones__de">sobre 5 en Treatwell</span></h2>
     <div class="opiniones__nota">
-      <h2 class="opiniones__titulo" id="opi-titulo"><span class="opiniones__cifra">4,7</span> <span class="opiniones__de">sobre 5 en Treatwell</span></h2>
-      <span class="estrellas estrellas--grandes" aria-hidden="true" data-estrellas><svg viewBox="0 0 120 22"><use href="#i-estrellas"/></svg><span class="estrellas__oro"><svg viewBox="0 0 120 22"><use href="#i-estrellas"/></svg></span></span>
+      <span class="estrellas estrellas--grandes" aria-hidden="true"><svg viewBox="0 0 120 22"><use href="#i-estrellas"/></svg><span class="estrellas__oro"><svg viewBox="0 0 120 22"><use href="#i-estrellas"/></svg></span></span>
       <p class="opiniones__cuantas">298 opiniones de clientas</p>
-      <a class="enlace" href="https://www.treatwell.es/establecimiento/centro-medico-estetico-elena-mendez/" target="_blank" rel="noopener">Leer las opiniones en Treatwell</a>
     </div>
-    <div class="citas" data-citas>
-      <div class="citas__pista" aria-live="polite">
-        <figure class="cita-op es-activa">
-          <blockquote>«Llevo muchos años asistiendo al centro y cada día mi experiencia y satisfacción es mejor.»</blockquote>
-          <figcaption><strong>Elena</strong><span>Peeling facial, marzo de 2024</span></figcaption>
-        </figure>
-        <figure class="cita-op">
-          <blockquote>«Carolina es una profesional estupenda, muy atenta y te hace sentir muy cómoda.»</blockquote>
-          <figcaption><strong>Svitlana</strong><span>Fotorrejuvenecimiento facial, mayo de 2024</span></figcaption>
-        </figure>
-        <figure class="cita-op">
-          <blockquote>«Todo perfecto, como siempre.»</blockquote>
-          <figcaption><strong>Marta</strong><span>Tratamientos faciales, abril de 2024</span></figcaption>
-        </figure>
-        <figure class="cita-op">
-          <blockquote>«Todo muy bien.»</blockquote>
-          <figcaption><strong>Silvia</strong><span>Fotodepilación, mayo de 2024</span></figcaption>
-        </figure>
-        <figure class="cita-op">
-          <blockquote>«Muy bien todo.»</blockquote>
-          <figcaption><strong>Pilar</strong><span>Fotorrejuvenecimiento facial, marzo de 2024</span></figcaption>
-        </figure>
-      </div>
-      <div class="citas__control">
-        <button class="citas__flecha" type="button" data-citas-ant aria-label="Opinión anterior"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-izquierda"/></svg></button>
-        <ol class="citas__puntos" aria-hidden="true"><li class="es-activo"></li><li></li><li></li><li></li><li></li></ol>
-        <button class="citas__flecha" type="button" data-citas-sig aria-label="Opinión siguiente"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-derecha"/></svg></button>
-      </div>
+    <div class="acciones opiniones__acciones">
+      <a class="boton boton--principal" data-wa="Hola, me gustaría pedir una primera consulta gratuita." href="https://wa.me/34682937011" target="_blank" rel="noopener"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Pide tu primera consulta</span></a>
+      <a class="boton boton--linea" href="https://www.treatwell.es/establecimiento/centro-medico-estetico-elena-mendez/" target="_blank" rel="noopener">Leer en Treatwell</a>
+    </div>
+  </div>
+  <div class="resenas" aria-label="Opiniones de clientas en Treatwell">
+    <div class="resenas__fila" data-bucle data-duplica>
+      <ul class="resenas__grupo">
+        <li class="resena"><span class="estrellas" aria-label="5 estrellas"><svg viewBox="0 0 120 22" aria-hidden="true"><use href="#i-estrellas"/></svg></span><blockquote>«Llevo muchos años asistiendo al centro y cada día mi experiencia y satisfacción es mejor.»</blockquote><p class="resena__quien"><strong>Elena</strong><span>Peeling facial, marzo de 2024</span></p></li>
+        <li class="resena"><span class="estrellas" aria-label="5 estrellas"><svg viewBox="0 0 120 22" aria-hidden="true"><use href="#i-estrellas"/></svg></span><blockquote>«Todo perfecto, como siempre.»</blockquote><p class="resena__quien"><strong>Marta</strong><span>Tratamientos faciales, abril de 2024</span></p></li>
+        <li class="resena"><span class="estrellas" aria-label="5 estrellas"><svg viewBox="0 0 120 22" aria-hidden="true"><use href="#i-estrellas"/></svg></span><blockquote>«Todo muy bien.»</blockquote><p class="resena__quien"><strong>Silvia</strong><span>Fotodepilación, mayo de 2024</span></p></li>
+      </ul>
+    </div>
+    <div class="resenas__fila resenas__fila--inversa" data-bucle data-duplica>
+      <ul class="resenas__grupo">
+        <li class="resena"><span class="estrellas" aria-label="5 estrellas"><svg viewBox="0 0 120 22" aria-hidden="true"><use href="#i-estrellas"/></svg></span><blockquote>«Carolina es una profesional estupenda, muy atenta y te hace sentir muy cómoda.»</blockquote><p class="resena__quien"><strong>Svitlana</strong><span>Fotorrejuvenecimiento facial, mayo de 2024</span></p></li>
+        <li class="resena"><span class="estrellas" aria-label="5 estrellas"><svg viewBox="0 0 120 22" aria-hidden="true"><use href="#i-estrellas"/></svg></span><blockquote>«Muy bien todo.»</blockquote><p class="resena__quien"><strong>Pilar</strong><span>Fotorrejuvenecimiento facial, marzo de 2024</span></p></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ 7 · Cita: la consulta se compone marcando ═══════════ -->
+
+<!-- ═══════════ 8 · Cita: la consulta se compone marcando ═══════════ -->
 <section class="seccion cita" aria-labelledby="cita-titulo" data-cita>
   <div class="contenedor cita__rejilla">
     <figure class="cita__figura">
@@ -581,7 +615,7 @@
         <fieldset class="consulta__grupo">
           <legend class="consulta__pregunta">¿Qué te interesa?</legend>
           <div class="opciones">
-            <label class="opcion"><input type="radio" name="que" value="medicina estética facial" checked><span>Medicina estética facial</span></label>
+            <label class="opcion"><input type="radio" name="que" value="medicina estética facial"><span>Medicina estética facial</span></label>
             <label class="opcion"><input type="radio" name="que" value="un tratamiento de cuerpo y silueta"><span>Cuerpo y silueta</span></label>
             <label class="opcion"><input type="radio" name="que" value="láser y depilación"><span>Láser y depilación</span></label>
             <label class="opcion"><input type="radio" name="que" value="un tratamiento facial"><span>Tratamientos faciales</span></label>
@@ -593,7 +627,7 @@
         <fieldset class="consulta__grupo">
           <legend class="consulta__pregunta">¿Cuándo te viene mejor?</legend>
           <div class="opciones">
-            <label class="opcion"><input type="radio" name="cuando" value="por la mañana" checked><span>Mañanas</span></label>
+            <label class="opcion"><input type="radio" name="cuando" value="por la mañana"><span>Mañanas</span></label>
             <label class="opcion"><input type="radio" name="cuando" value="por la tarde"><span>Tardes</span></label>
             <label class="opcion"><input type="radio" name="cuando" value="el sábado por la mañana"><span>Sábado por la mañana</span></label>
           </div>
@@ -614,7 +648,7 @@
   </div>
 </section>
 
-<!-- ═══════════ 8 · Regala un tratamiento ═══════════ -->
+<!-- ═══════════ 9 · Regala un tratamiento ═══════════ -->
 <section class="seccion regalo" aria-labelledby="regalo-titulo" data-regalo>
   <div class="contenedor regalo__rejilla">
     <div class="regalo__paquete encuadre" data-paquete>
@@ -645,7 +679,7 @@
   </div>
 </section>
 
-<!-- ═══════════ 9 · El centro y cómo llegar ═══════════ -->
+<!-- ═══════════ 10 · El centro y cómo llegar ═══════════ -->
 <section class="seccion centro" aria-labelledby="centro-titulo">
   <div class="contenedor">
     <div class="sec-cabeza">
@@ -654,7 +688,7 @@
     </div>
   </div>
   <div class="tira" data-tira>
-    <div class="tira__pista" data-bucle>
+    <div class="tira__pista" data-bucle data-duplica>
       <ul class="tira__grupo">
         <li><button class="tira__foto encuadre" type="button" data-ampliar="0"><img src="assets/img/centro-recepcion-800.webp" srcset="assets/img/centro-recepcion-480.webp 480w, assets/img/centro-recepcion-800.webp 800w, assets/img/centro-recepcion-1080.webp 1080w" sizes="(min-width: 900px) 30vw, 70vw" width="1080" height="720" alt="Recepción con lámpara de araña y el rótulo de Elena Méndez" loading="lazy" decoding="async"></button></li>
         <li><button class="tira__foto encuadre" type="button" data-ampliar="1"><img src="assets/img/centro-cabina-720.webp" srcset="assets/img/centro-cabina-480.webp 480w, assets/img/centro-cabina-720.webp 720w" sizes="(min-width: 900px) 30vw, 70vw" width="720" height="480" alt="Cabina de tratamiento con el equipo Indiba" loading="lazy" decoding="async"></button></li>
@@ -712,7 +746,7 @@
   </div>
 </section>
 
-<!-- ═══════════ 10 · Blog ═══════════ -->
+<!-- ═══════════ 11 · Blog ═══════════ -->
 <section class="seccion blog" aria-labelledby="blog-titulo">
   <div class="contenedor">
     <div class="sec-cabeza sec-cabeza--fila">
