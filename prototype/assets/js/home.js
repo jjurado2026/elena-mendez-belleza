@@ -49,7 +49,7 @@
     var frases = hero.querySelectorAll('.hero__frase');
     var panel = hero.querySelector('[data-panel]');
     var N = astros.length, PASO = Math.PI * 2 / N;
-    var actual = null;
+    var actual = null, marcada = null;
 
     // Cada frase, letra a letra (para que cambie con movimiento propio)
     frases.forEach(function (f) {
@@ -67,9 +67,14 @@
       });
     });
 
+    // Los círculos del marcaje solo se dibujan sobre la cara al pulsar una zona
+    var marcar = function (z) {
+      marcada = z;
+      marcas.forEach(function (m) { m.classList.toggle('es-marcada', m.getAttribute('data-zona') === z); });
+    };
     var activar = function (z) {
       if (z === actual) return;
-      marcas.forEach(function (m) { m.classList.toggle('es-activa', m.getAttribute('data-zona') === z); });
+      if (marcada && marcada !== z) marcar(null);
       astros.forEach(function (a) {
         var on = a.getAttribute('data-zona') === z;
         a.classList.toggle('es-activa', on);
@@ -92,15 +97,20 @@
       actual = z;
     };
 
-    // Geometría de la elipse: alrededor del arco, como un anillo; delante pasa por el pie del arco
+    // Geometría de la órbita: una elipse por fuera del círculo, para que las zonas no tapen la cara.
+    // Puede usar el hueco entre columnas, pero nunca invade el texto ni se sale de la pantalla.
     var G = {};
+    var texto = hero.querySelector('.hero__texto');
     var medir = function () {
-      var e = escenario.getBoundingClientRect(), a = arco.getBoundingClientRect();
-      var anchoAstro = 120;
-      G.cx = a.left - e.left + a.width / 2;
-      G.cy = a.top - e.top + a.height * 0.58;
-      G.rx = Math.min(a.width / 2 + anchoAstro * 0.5, e.width / 2 - 10);
-      G.ry = a.height * 0.43;
+      var e = escenario.getBoundingClientRect(), a = arco.getBoundingClientRect(), t = texto.getBoundingClientRect();
+      var r = a.width / 2, bw = 0, bh = 0;
+      astros.forEach(function (x) { bw = Math.max(bw, x.offsetWidth); bh = Math.max(bh, x.offsetHeight); });
+      var cx = a.left + r;
+      var izq = t.right < a.left ? t.right + 6 : 6, der = d.documentElement.clientWidth - 6;
+      G.cx = cx - e.left;
+      G.cy = a.top - e.top + r;
+      G.rx = Math.max(r * 0.8, Math.min(r + bw * 0.35, cx - izq - bw / 2, der - cx - bw / 2));
+      G.ry = Math.max(r * 0.8, Math.min(r + bh * 0.45, e.height / 2 - bh / 2));
     };
     var ang = Math.PI / 2;            // la zona 0 (mirada) empieza delante
     var objetivo = null, crecer = quieto ? 1 : 0;
@@ -114,13 +124,12 @@
         var esc = (0.84 + 0.21 * p) * (0.4 + 0.6 * crecer);     // detrás, nunca por debajo de 44 px de diana
         a.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0) translate(-50%,-50%) scale(' + esc.toFixed(3) + ')';
         a.style.opacity = ((0.42 + 0.58 * p) * crecer).toFixed(3);
-        a.classList.toggle('delante', s > -0.2);
         if (s > delanteMax) { delanteMax = s; quien = a.getAttribute('data-zona'); }
       });
       return quien;
     };
 
-    var heroVisible = true, encima = false, ultimo = 0, rafHero = null, inicio = 0;
+    var heroVisible = true, encima = false, ultimo = 0, rafHero = null, inicio = 0, sostener = 0;
     var VUELTA = 42000;               // una vuelta entera, en ms
     var bucle = function (ahora) {
       rafHero = null;
@@ -135,7 +144,7 @@
         var dif = objetivo - ang;
         ang += dif * Math.min(1, dt / 160);
         if (Math.abs(dif) < 0.002) { ang = objetivo; objetivo = null; }
-      } else if (!encima) {
+      } else if (!encima && ahora > sostener) {
         ang += (Math.PI * 2) * (dt / VUELTA);
       }
       var delante = colocar();
@@ -155,10 +164,14 @@
 
     astros.forEach(function (a, i) {
       var b = a.querySelector('button'), z = a.getAttribute('data-zona');
-      b.addEventListener('mouseenter', function () { activar(z); });
+      // solo cuenta mover de verdad el ratón por encima: si la zona pasa bajo el cursor quieto
+      // (al girar hacia la zona pulsada, al hacer scroll) no cambia nada
+      b.addEventListener('pointermove', function (e) { if (e.pointerType !== 'touch' && objetivo === null) activar(z); });
       b.addEventListener('focus', function () { activar(z); });
       b.addEventListener('click', function () {
         activar(z);
+        marcar(z);
+        sostener = performance.now() + 6000;                      // la zona pulsada se queda al frente un rato
         if (quieto) { ang = alFrente(i); colocar(); }
         else { objetivo = alFrente(i); arrancar(); }
       });
@@ -184,16 +197,18 @@
     d.addEventListener('visibilitychange', function () { if (!d.hidden) { ultimo = 0; arrancar(); } });
   }
 
-  /* ── 2 · Novedades: carrusel 3D ───────────────────────────────────── */
+  /* ── 2 · Novedades: carrusel 3D en deriva continua ──────────────────
+     No se para: va despacio cuando una tarjeta pasa por el centro y algo más
+     rápido entre una y otra. Con el cursor encima va aún más despacio (se puede
+     pulsar «Lo quiero» sin perseguirlo); con el foco del teclado dentro se detiene. */
   var car = d.querySelector('[data-carrusel]');
   if (car) {
     var tarjetas = Array.prototype.slice.call(car.querySelectorAll('.tarjeta'));
     var puntos = car.querySelector('[data-carrusel-puntos]');
-    var NT = tarjetas.length, cAct = 0, relojCar = null, carVisible = false, carEncima = false;
-    var DUR = 5200;
+    var NT = tarjetas.length, carVisible = false, carEncima = false, carFoco = false;
+    var PERIODO = 5200, K = 0.72;     // ms por tarjeta; K: cuánto frena al pasar por el centro (0 = velocidad uniforme)
     tarjetas.forEach(function () { puntos.appendChild(d.createElement('li')); });
     var listaPuntos = puntos.querySelectorAll('li');
-    car.style.setProperty('--dur', DUR + 'ms');
 
     var cargarFotos = function () {
       car.querySelectorAll('img[data-src]').forEach(function (img) {
@@ -201,67 +216,108 @@
         img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); img.removeAttribute('data-srcset');
       });
     };
+    // pos = posición del carrusel en tarjetas (puede tener decimales); lin avanza a ritmo constante y pos = curva(lin)
+    var curva = function (x) { return x - K * Math.sin(2 * Math.PI * x) / (2 * Math.PI); };
+    var pos = 0, lin = 0, meta = null, cAct = -1, rafCar = null, ultCar = 0, reanudar = 0, velCar = 0;
+    var mod = function (n) { return ((n % NT) + NT) % NT; };
+
+    var activa = function (n) {
+      if (n === cAct) return;
+      cAct = n;
+      tarjetas.forEach(function (t, i) {
+        var on = i === n;
+        t.classList.toggle('es-activa', on);
+        t.setAttribute('aria-hidden', String(!on));
+        t.querySelectorAll('a, button').forEach(function (el) { el.tabIndex = on ? 0 : -1; });
+      });
+      listaPuntos.forEach(function (p, k) { p.classList.toggle('es-activo', k === n); });
+      videos();
+    };
+    var videos = function () {
+      tarjetas.forEach(function (t, i) {
+        var v = t.querySelector('video');
+        if (!v) return;
+        if (i === cAct && carVisible && !quieto) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+        else if (!v.paused) v.pause();
+      });
+    };
     var colocarCar = function () {
       var w = tarjetas[0].offsetWidth, movil = window.innerWidth < 900;
+      var paso = w * (movil ? 0.8 : 0.72), fondo = movil ? 130 : 180, giroMax = movil ? 20 : 26, borde = movil ? 1 : 2;
       tarjetas.forEach(function (t, i) {
-        var o = ((i - cAct) % NT + NT) % NT;
-        if (o > NT / 2) o -= NT;
+        var o = i - pos;
+        o = o - Math.round(o / NT) * NT;                          // la distancia más corta, dando la vuelta
         var abs = Math.abs(o);
-        var x = o * w * (movil ? 0.8 : 0.72);
-        var z = -abs * (movil ? 130 : 180);
-        var giro = -o * (movil ? 22 : 30);
-        var seVe = abs <= (movil ? 1 : 2);
-        t.style.transform = 'translateX(' + x.toFixed(1) + 'px) translateZ(' + z + 'px) rotateY(' + giro + 'deg)';
-        t.style.opacity = seVe ? '1' : '0';
-        t.style.zIndex = String(20 - abs);
-        t.style.setProperty('--velo', abs ? Math.min(0.35 + abs * 0.25, 0.9).toFixed(2) : '0');
-        t.classList.toggle('es-activa', o === 0);
-        t.setAttribute('aria-hidden', String(o !== 0));
-        t.querySelectorAll('a, button').forEach(function (el) { el.tabIndex = o === 0 ? 0 : -1; });
-        var v = t.querySelector('video');
-        if (v) {
-          if (o === 0 && carVisible && !quieto) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
-          else if (!v.paused) v.pause();
-        }
+        var op = Math.max(0, Math.min(1, (borde + 0.6 - abs) / 0.6));
+        t.style.transform = 'translateX(' + (o * paso).toFixed(1) + 'px) translateZ(' + (-abs * fondo).toFixed(1) + 'px) rotateY(' + (-Math.max(-1.6, Math.min(1.6, o)) * giroMax).toFixed(2) + 'deg)';
+        t.style.opacity = op.toFixed(3);
+        t.style.visibility = op > 0 ? 'visible' : 'hidden';
+        t.style.zIndex = String(100 - Math.round(abs * 10));
+        t.style.setProperty('--velo', Math.min(abs * 0.6, 0.9).toFixed(3));
       });
-      listaPuntos.forEach(function (p, k) { p.classList.toggle('es-activo', k === cAct); });
+      activa(mod(Math.round(pos)));
     };
-    var programarCar = function () {
-      clearTimeout(relojCar);
-      car.classList.remove('en-marcha');
-      if (quieto || !carVisible || carEncima) return;
-      void car.offsetWidth;
-      car.classList.add('en-marcha');
-      relojCar = setTimeout(function () { ir(cAct + 1); }, DUR);
+    var ritmo = function () { return carFoco || performance.now() < reanudar ? 0 : carEncima ? 0.3 : 1; };
+    var bucleCar = function (ahora) {
+      rafCar = null;
+      if (!carVisible || d.hidden) { ultCar = 0; return; }
+      var dt = ultCar ? Math.min(64, ahora - ultCar) : 16;
+      ultCar = ahora;
+      if (meta !== null) {                                        // flechas, arrastre, clic o cursor encima: ir a una tarjeta
+        var dif = meta - pos;
+        pos += dif * Math.min(1, dt / 190);
+        if (Math.abs(dif) < 0.0015) { pos = meta; meta = null; lin = pos; velCar = 0; }
+      } else {
+        velCar += (ritmo() - velCar) * Math.min(1, dt / 500);     // arranca y frena con suavidad
+        lin += velCar * dt / PERIODO;
+        pos = curva(lin);
+      }
+      colocarCar();
+      rafCar = requestAnimationFrame(bucleCar);
     };
-    var ir = function (n) { cAct = (n + NT) % NT; colocarCar(); programarCar(); };
+    var arrancarCar = function () { if (!quieto && !rafCar && carVisible) rafCar = requestAnimationFrame(bucleCar); };
+    var ir = function (n, pausa) {
+      if (quieto) { pos = lin = n; colocarCar(); return; }
+      meta = n;
+      reanudar = performance.now() + (pausa || 3200);
+      arrancarCar();
+    };
+    var hasta = function (i) { var o = i - pos; return pos + o - Math.round(o / NT) * NT; };
 
-    car.querySelector('[data-carrusel-ant]').addEventListener('click', function () { ir(cAct - 1); });
-    car.querySelector('[data-carrusel-sig]').addEventListener('click', function () { ir(cAct + 1); });
+    car.querySelector('[data-carrusel-ant]').addEventListener('click', function () { ir(Math.round(meta !== null ? meta : pos) - 1); });
+    car.querySelector('[data-carrusel-sig]').addEventListener('click', function () { ir(Math.round(meta !== null ? meta : pos) + 1); });
     tarjetas.forEach(function (t, i) {
-      t.addEventListener('click', function (e) { if (!t.classList.contains('es-activa')) { e.preventDefault(); ir(i); } });
+      t.addEventListener('click', function (e) { if (!t.classList.contains('es-activa')) { e.preventDefault(); ir(Math.round(hasta(i))); } });
     });
-    car.addEventListener('mouseenter', function () { carEncima = true; programarCar(); });
-    car.addEventListener('mouseleave', function () { carEncima = false; programarCar(); });
-    car.addEventListener('focusin', function () { carEncima = true; programarCar(); });
-    car.addEventListener('focusout', function () { carEncima = false; programarCar(); });
+    car.addEventListener('mouseenter', function () { carEncima = true; });
+    car.addEventListener('mouseleave', function () { carEncima = false; });
+    car.addEventListener('focusin', function (e) {               // solo con teclado: se para y centra la más cercana
+      if (!e.target.matches(':focus-visible')) return;
+      carFoco = true;
+      if (meta === null) ir(Math.round(pos), 1);
+    });
+    car.addEventListener('focusout', function () { carFoco = false; });
     car.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') { ir(cAct + 1); e.preventDefault(); }
-      if (e.key === 'ArrowLeft') { ir(cAct - 1); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { ir(Math.round(meta !== null ? meta : pos) + 1); e.preventDefault(); }
+      if (e.key === 'ArrowLeft') { ir(Math.round(meta !== null ? meta : pos) - 1); e.preventDefault(); }
     });
-    // Arrastrar o deslizar con el dedo
+    // Arrastrar o deslizar con el dedo; al tocar, se detiene para poder pulsar
     var x0 = null;
     var escena = car.querySelector('[data-escena-carrusel]');
-    escena.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
+    escena.addEventListener('pointerdown', function (e) {
+      x0 = e.clientX;
+      if (e.pointerType !== 'mouse') reanudar = performance.now() + 5000;
+    });
     escena.addEventListener('pointerup', function (e) {
       if (x0 === null) return;
       var dx = e.clientX - x0; x0 = null;
-      if (Math.abs(dx) > 45) ir(cAct + (dx < 0 ? 1 : -1));
+      if (Math.abs(dx) > 45) ir(Math.round(meta !== null ? meta : pos) + (dx < 0 ? 1 : -1), 5000);
     });
     escena.addEventListener('pointercancel', function () { x0 = null; });
 
     visible(car, function (v) { if (v) cargarFotos(); }, { rootMargin: '700px 0px', threshold: 0 });
-    visible(car, function (v) { carVisible = v; colocarCar(); programarCar(); }, { threshold: 0.25 });
+    visible(car, function (v) { carVisible = v; videos(); if (v) arrancarCar(); }, { rootMargin: '120px 0px', threshold: 0 });
+    d.addEventListener('visibilitychange', function () { if (!d.hidden) { ultCar = 0; arrancarCar(); } });
     addEventListener('resize', function () { colocarCar(); });
     colocarCar();
   }

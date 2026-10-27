@@ -6,13 +6,13 @@ Prototipo de homepage para **Elena Méndez** ([elenamendez-belleza.com](https://
 
 **El problema que resuelve:** su home actual tarda 6,3 s en pintar lo principal en un móvil con 4G lenta, el titular ocupa la primera pantalla entera del móvil sin un solo botón de cita, el chat de WhatsApp se abre solo y tapa casi la mitad de cada pantalla, y no dice dónde está ni cuándo abre. Tampoco enseña sus 298 opiniones, sus precios (que sí están en sus carteles) ni las 17 fotos reales de su centro.
 
-## Dirección estética: «Órbita de luz» (v2, ronda de cambios 1)
+## Dirección estética: «Órbita de luz» (v2.1, ronda de cambios 2)
 
-La v1 «Marcaje» (etiqueta `v1-home`) se juzgó básica. La v2 conserva sus colores, sus fotos y sus textos y lo pone todo en movimiento:
+La v1 «Marcaje» (etiqueta `v1-home`) se juzgó básica. La v2 conserva sus colores, sus fotos y sus textos y lo pone todo en movimiento; la ronda 2 pone su foto en un círculo, deja el marcaje solo para cuando se pulsa una zona y hace que las novedades no se paren nunca:
 
 1. **Barra amarilla** como la de su web (primera consulta gratis, teléfonos, WhatsApp) y cabecera fija con el logo centrado.
-2. **Hero «Órbita de luz»:** escenario azul noche con brillos de oro y rosa, chispas y su lema en grande al fondo. Su cara de marca aparece en un **arco con doble filete de oro** que se abre como unas lamas; encima, el marcaje del médico y un escáner de luz. Las seis zonas (mirada, labios, óvalo, piel, pómulos, expresión) **giran en órbita alrededor del arco**: la que pasa por delante cambia el titular letra a letra («Rejuvenece tu mirada… sin cirugía») y al pulsar una, la órbita la trae al frente. Tarjetas flotantes (4,7 en Treatwell, primera consulta gratis, desde 2014), tres llamadas a la acción y una cinta de promociones con precio, cada una a WhatsApp.
-3. **Novedades en un carrusel 3D** con sus vídeos (Indiba Edna Pro Max, Endolift), carteles y fotos; avanza solo, se arrastra y cada una tiene su «Lo quiero».
+2. **Hero «Órbita de luz»:** escenario azul noche con brillos de oro y rosa, chispas y su lema en grande al fondo. Su cara de marca aparece en un **círculo con doble filete de oro**, con la cara entera, que se abre como unas lamas y por el que pasa un escáner de luz. Las seis zonas (mirada, labios, óvalo, piel, pómulos, expresión) **giran en órbita por fuera del círculo**, sin taparle la cara: la que pasa por delante cambia el titular letra a letra («Rejuvenece tu mirada… sin cirugía»); al pulsar una, la órbita la trae al frente y **solo entonces se dibuja su marcaje** (anillos y puntos de lápiz) sobre la cara. Tarjetas flotantes (4,7 en Treatwell, primera consulta gratis, desde 2014), tres llamadas a la acción y una cinta de promociones con precio, cada una a WhatsApp.
+3. **Novedades en un carrusel 3D en movimiento continuo** con sus vídeos (Indiba Edna Pro Max, Endolift), carteles y fotos: no se para nunca, frena suavemente al pasar cada tarjeta por el centro y las fotos «respiran» dentro de su marco; con el cursor encima va más despacio para poder pulsar «Lo quiero». Se arrastra, tiene flechas y cada una lleva su WhatsApp.
 4. **Tratamientos como índice grande**: la foto de cada página flota junto al cursor y cada fila tiene «Pedir cita».
 5. **Banda amarilla** con su lista literal de tratamientos en dos cintas, su frase de financiación y un sello giratorio «Pide tu cita».
 6. **Medicina estética** con sus dos fotos de la home (la de labios rojos y la de los doctores) y el sello sanitario que gira.
@@ -21,7 +21,7 @@ La v1 «Marcaje» (etiqueta `v1-home`) se juzgó básica. La v2 conserva sus col
 9. **Consulta gratis**: ninguna opción marcada de inicio; se pinta de azul la que tiene el cursor y el mensaje de WhatsApp se escribe solo.
 10. Regalo, el centro (tira de fotos reales con visor, horario en vivo, mapa) y blog, como en la v1.
 
-**Regla de hover:** el elemento que recibe el cursor no se mueve nunca (se animan sus hijos), y el texto de la zona activa del hero tiene altura fija, para que ningún botón «baile» bajo el cursor ni se quede pillado.
+**Regla de hover:** el elemento que recibe el cursor no se mueve nunca (se animan sus hijos), y el texto de la zona activa del hero tiene altura fija, para que ningún botón «baile» bajo el cursor ni se quede pillado. En la órbita solo cuenta mover el ratón de verdad: una zona que pasa bajo el cursor quieto no cambia nada.
 
 ## Fotos y vídeos
 Las suyas, sin recortar ni retocar color: las de su home en el mismo papel (hero, «Medicina Estética», «Pide aquí tu cita», productos Mesoestetic, promociones, insignias y blog), la de cada página de tratamientos y las de su galería y su ficha de Treatwell. Las fotos con personas se han ampliado con IA (Real-ESRGAN, modelo remacri) devolviéndoles el color exacto del original; los carteles e insignias, solo reescalados. Vídeos: un fragmento de su vídeo de Indiba Edna Pro Max (solo los planos del aparato; las escenas de recepción y doctora de ese vídeo están hechas con IA) y su vídeo de Endolift en cabina.
