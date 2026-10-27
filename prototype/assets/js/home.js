@@ -196,7 +196,10 @@
     car.style.setProperty('--dur', DUR + 'ms');
 
     var cargarFotos = function () {
-      car.querySelectorAll('img[data-src]').forEach(function (img) { img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); });
+      car.querySelectorAll('img[data-src]').forEach(function (img) {
+        if (img.getAttribute('data-srcset')) img.srcset = img.getAttribute('data-srcset');
+        img.src = img.getAttribute('data-src'); img.removeAttribute('data-src'); img.removeAttribute('data-srcset');
+      });
     };
     var colocarCar = function () {
       var w = tarjetas[0].offsetWidth, movil = window.innerWidth < 900;
