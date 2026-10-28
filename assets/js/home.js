@@ -79,11 +79,13 @@
       carta.classList.add('en-marcha');
       reloj = setTimeout(function () { activar(act + 1); }, DUR);
     };
-    var activar = function (i, foco) {
+    // elegida: la que ha elegido la persona (no la que trae la carta al avanzar sola)
+    var activar = function (i, foco, elegida) {
       act = (i + pestanas.length) % pestanas.length;
       pestanas.forEach(function (p, k) {
         var on = k === act;
         p.setAttribute('aria-selected', String(on));
+        p.classList.toggle('elegida', on && !!elegida);
         p.tabIndex = on ? 0 : -1;
         paneles[k].classList.toggle('es-activo', on);
       });
@@ -96,16 +98,16 @@
       programar();
     };
     pestanas.forEach(function (p, i) {
-      p.addEventListener('click', function () { activar(i); });
+      p.addEventListener('click', function () { activar(i, false, true); });
       // Con ratón, basta con pasar por encima (solo cuenta moverlo de verdad)
-      p.addEventListener('pointermove', function (e) { if (e.pointerType === 'mouse' && i !== act) activar(i); });
+      p.addEventListener('pointermove', function (e) { if (e.pointerType === 'mouse' && i !== act) activar(i, false, true); });
       p.addEventListener('keydown', function (e) {
         var k = e.key, n = null;
         if (k === 'ArrowDown' || k === 'ArrowRight') n = act + 1;
         else if (k === 'ArrowUp' || k === 'ArrowLeft') n = act - 1;
         else if (k === 'Home') n = 0;
         else if (k === 'End') n = pestanas.length - 1;
-        if (n !== null) { e.preventDefault(); activar(n, true); }
+        if (n !== null) { e.preventDefault(); activar(n, true, true); }
       });
     });
     carta.addEventListener('mouseenter', function () { cartaEncima = true; programar(); });

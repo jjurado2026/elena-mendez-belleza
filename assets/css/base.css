@@ -114,13 +114,12 @@ h1, h2, h3 { color: var(--noche); font-weight: 400; }
 .boton--linea:hover, .boton--linea:focus-visible { color: #fff; }
 .boton--linea:hover::before, .boton--linea:focus-visible::before { opacity: 1; }
 
-/* Oro: contorno de oro en reposo; con el cursor se llena del oro de su logo */
-.boton--oro { color: var(--noche); border-color: var(--oro-marca); }
-.boton--oro .icono { color: var(--oro-tinta); }
+/* Oro: en reposo, igual que todos (trazo fino azul); con el cursor se llena del oro de su logo */
+.boton--oro { color: var(--noche); }
 .boton--oro::before { background: var(--oro); }
 .boton--oro::after { background: var(--noche); }
+.boton--oro:hover, .boton--oro:focus-visible { border-color: var(--oro-marca); }
 .boton--oro:hover::before, .boton--oro:focus-visible::before { opacity: 1; }
-.boton--oro:hover .icono, .boton--oro:focus-visible .icono { color: var(--noche); }
 
 .boton--linea-clara { color: #fff; border-color: rgba(255, 255, 255, .55); }
 .boton--linea-clara::before { background: #fff; }
@@ -230,9 +229,9 @@ body.menu-abierto { overflow: hidden; }
     background: #fff; border-top: 1px solid var(--linea); padding-bottom: env(safe-area-inset-bottom); box-shadow: 0 -10px 30px -18px rgba(32, 38, 58, .35); }
   .barra__enlace { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 60px; font-size: .8125rem; font-weight: 650; color: var(--noche); text-decoration: none; transition: transform .35s var(--muelle); }
   .barra__enlace .icono { width: 22px; height: 22px; }
-  .barra__enlace--cita { position: relative; }
-  .barra__enlace--cita .icono { color: var(--oro-tinta); }
-  .barra__enlace--cita::before { content: ""; position: absolute; left: 22%; right: 22%; top: 0; height: 3px; background: var(--oro-marca); border-radius: 0 0 3px 3px; }
+  /* Todos iguales en reposo; el sobre de «Pedir cita» hace un gesto de vez en cuando */
+  .anima .barra__enlace--cita .icono { animation: gesto-sobre 7s ease-in-out 3s infinite; }
+  @keyframes gesto-sobre { 0%, 86%, 100% { transform: none; } 90% { transform: translateY(-3px) rotate(-10deg); } 94% { transform: translateY(0) rotate(7deg); } }
   .barra__enlace:active { transform: scale(.94); }
   body { padding-bottom: calc(60px + env(safe-area-inset-bottom)); }
   .anima .barra { animation: sube-barra .8s var(--muelle-suave) 1.4s both; }
