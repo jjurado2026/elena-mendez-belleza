@@ -1,6 +1,7 @@
 /* =====================================================================
    Elena Méndez Medicina Estética — base: tokens, tipografía, cabecera,
-   botones, pie y sistema de movimiento. Dirección «Marcaje».
+   botones, pie y sistema de movimiento. v3: blanco y oro, como su web.
+   Ningún botón va relleno en reposo: se rellena el que tiene el cursor.
    Solo se animan transform y opacity. ?ss y «reducir movimiento»: todo quieto.
    ===================================================================== */
 
@@ -8,7 +9,7 @@
 @font-face { font-family: 'Urbanist'; src: url('../fonts/urbanist.woff2') format('woff2'); font-style: normal; font-weight: 300 800; font-display: swap; }
 
 :root {
-  /* Color: su azul noche de titulares, el oro de su logo, su rosa y blanco clínico */
+  /* Color: blanco y el oro de su logo; su azul noche, solo en titulares y texto */
   --blanco: #FFFFFF;
   --noche: #2F3854;
   --noche-honda: #20263A;
@@ -16,9 +17,11 @@
   --texto: #4A5068;
   --texto-suave: #6A7088;
   --oro: #F4D058;            /* el oro del logo: sobre azul */
-  --oro-vivo: #F9C700;       /* el amarillo de su web: solo en estados de hover sobre azul */
   --oro-marca: #E2B93B;      /* puntos y marcas decorativas sobre blanco */
   --oro-tinta: #8A6A12;      /* oro legible sobre blanco (5:1) */
+  --oro-hondo: #C9A13A;      /* filetes y marcos de oro sobre blanco */
+  --oro-linea: #EADBA8;      /* líneas finas */
+  --oro-suave: #FBF6E7;      /* fondos con un velo de oro */
   --rosa: #F2DCEA;           /* su rosa */
   --rosa-claro: #FBF3F7;
   --linea: #E7E3EC;
@@ -111,26 +114,19 @@ h1, h2, h3 { color: var(--noche); font-weight: 400; }
 .boton--linea:hover, .boton--linea:focus-visible { color: #fff; }
 .boton--linea:hover::before, .boton--linea:focus-visible::before { opacity: 1; }
 
-.boton--principal, .boton--oscuro { color: #fff; }
-.boton--principal::before, .boton--oscuro::before { opacity: 1; }
-.boton--principal:hover::before, .boton--principal:focus-visible::before,
-.boton--oscuro:hover::before, .boton--oscuro:focus-visible::before { background: var(--noche-honda); }
-
-.boton--oro { color: var(--noche); border-color: var(--oro); }
-.boton--oro::before { opacity: 1; background: var(--oro); }
+/* Oro: contorno de oro en reposo; con el cursor se llena del oro de su logo */
+.boton--oro { color: var(--noche); border-color: var(--oro-marca); }
+.boton--oro .icono { color: var(--oro-tinta); }
+.boton--oro::before { background: var(--oro); }
 .boton--oro::after { background: var(--noche); }
-.boton--oro:hover::before, .boton--oro:focus-visible::before { background: var(--oro-vivo); }
+.boton--oro:hover::before, .boton--oro:focus-visible::before { opacity: 1; }
+.boton--oro:hover .icono, .boton--oro:focus-visible .icono { color: var(--noche); }
 
 .boton--linea-clara { color: #fff; border-color: rgba(255, 255, 255, .55); }
 .boton--linea-clara::before { background: #fff; }
 .boton--linea-clara:hover, .boton--linea-clara:focus-visible { color: var(--noche); border-color: #fff; }
 .boton--linea-clara:hover::before, .boton--linea-clara:focus-visible::before { opacity: 1; }
 
-/* En un grupo, el principal va marcado en reposo; si el cursor pasa a otro, solo se colorea ese */
-.acciones:has(.boton:not(.boton--principal):is(:hover, :focus-visible)) .boton--principal:not(:hover, :focus-visible) { color: var(--noche); }
-.acciones:has(.boton:not(.boton--principal):is(:hover, :focus-visible)) .boton--principal:not(:hover, :focus-visible)::before { opacity: 0; }
-.acciones:has(.boton:not(.boton--oro):is(:hover, :focus-visible)) .boton--oro:not(:hover, :focus-visible) { color: var(--oro); }
-.acciones:has(.boton:not(.boton--oro):is(:hover, :focus-visible)) .boton--oro:not(:hover, :focus-visible)::before { opacity: 0; }
 
 /* Enlaces de texto: el subrayado de oro se dibuja al pasar */
 .enlace { position: relative; display: inline-flex; align-items: center; min-height: 44px; font-weight: 650; color: var(--noche); text-decoration: none; }
@@ -161,9 +157,7 @@ h1, h2, h3 { color: var(--noche); font-weight: 400; }
 .cab__enlace::after { content: ""; position: absolute; left: 0; right: 0; bottom: 9px; height: 2px; background: var(--oro-marca); transform: scaleX(0); transform-origin: right center; transition: transform .45s var(--sale); }
 .cab__enlace:hover::after, .cab__enlace:focus-visible::after { transform: scaleX(1); transform-origin: left center; }
 .cab__enlace:active { transform: translateY(1px); }
-.boton--cab { min-height: 44px; padding: 0 18px; color: #fff; }
-.boton--cab::before { opacity: 1; }
-.boton--cab:hover::before, .boton--cab:focus-visible::before { background: var(--noche-honda); }
+.boton--cab { min-height: 44px; padding: 0 18px; }
 .cab__boton-menu, .cab__llamar { display: none; }
 
 @media (max-width: 1099px) {
@@ -203,30 +197,31 @@ h1, h2, h3 { color: var(--noche); font-weight: 400; }
 body.menu-abierto { overflow: hidden; }
 
 /* ── Pie ────────────────────────────────────────────────────────────── */
-.pie { background: var(--noche-honda); color: #C9CDDA; padding-block: clamp(56px, 7vw, 96px) 24px; font-size: var(--t-peque); }
-.pie a { color: #fff; text-decoration: none; }
-.pie a:hover, .pie a:focus-visible { color: var(--oro); }
+.pie { position: relative; background: #fff; color: var(--texto); padding-block: clamp(56px, 7vw, 96px) 24px; font-size: var(--t-peque); }
+.pie::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px; border-top: 1px solid var(--oro-hondo); border-bottom: 1px solid var(--oro-linea); }
+.pie a { color: var(--noche); text-decoration: none; }
+.pie a:hover, .pie a:focus-visible { color: var(--oro-tinta); text-decoration: underline; text-decoration-color: var(--oro-marca); text-underline-offset: 4px; }
 .pie__rejilla { display: grid; gap: 36px 28px; grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 700px) { .pie__rejilla { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1100px) { .pie__rejilla { grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; } }
 .pie__logo { height: 76px; width: auto; margin-bottom: 18px; }
 .pie__marca p { max-width: 24em; }
 .pie__redes { display: flex; gap: 10px; margin-top: 18px; }
-.pie__redes a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .25); transition: transform .45s var(--muelle); }
+.pie__redes a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--oro-linea); color: var(--oro-tinta); transition: transform .45s var(--muelle); }
 .pie__redes a .icono { transition: transform .45s var(--muelle); }
 .pie__redes a:hover, .pie__redes a:focus-visible { border-color: var(--oro); }
 .pie__redes a:hover .icono, .pie__redes a:focus-visible .icono { transform: scale(1.18); }
 .pie__redes a:active { transform: scale(.94); }
-.pie__titulo { font-family: var(--serif); font-size: 1.3125rem; color: #fff; margin-bottom: 12px; }
+.pie__titulo { font-family: var(--serif); font-size: 1.3125rem; color: var(--noche); margin-bottom: 12px; }
 .pie__col p + p { margin-top: 10px; }
-.pie__suave { color: #9DA3B8; }
+.pie__suave { color: var(--texto-suave); }
 .pie__correo { overflow-wrap: anywhere; }
 .pie__enlaces li a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
 .pie__enlaces li a:active { transform: translateX(3px); }
-.pie__base { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center; justify-content: space-between; margin-top: clamp(40px, 5vw, 64px); padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, .12); }
-.pie__sanidad { width: 200px; height: auto; background: #fff; padding: 8px 12px; border-radius: 4px; box-sizing: content-box; }
-.pie__legal { display: flex; flex-wrap: wrap; gap: 4px 20px; align-items: center; color: #9DA3B8; }
-.pie__legal a { display: inline-flex; align-items: center; min-height: 44px; color: #C9CDDA; }
+.pie__base { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center; justify-content: space-between; margin-top: clamp(40px, 5vw, 64px); padding-top: 24px; border-top: 1px solid var(--oro-linea); }
+.pie__sanidad { width: 220px; height: auto; }
+.pie__legal { display: flex; flex-wrap: wrap; gap: 4px 20px; align-items: center; color: var(--texto-suave); }
+.pie__legal a { display: inline-flex; align-items: center; min-height: 44px; color: var(--texto); }
 
 /* ── Barra fija del móvil ───────────────────────────────────────────── */
 .barra { display: none; }
@@ -235,29 +230,14 @@ body.menu-abierto { overflow: hidden; }
     background: #fff; border-top: 1px solid var(--linea); padding-bottom: env(safe-area-inset-bottom); box-shadow: 0 -10px 30px -18px rgba(32, 38, 58, .35); }
   .barra__enlace { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 60px; font-size: .8125rem; font-weight: 650; color: var(--noche); text-decoration: none; transition: transform .35s var(--muelle); }
   .barra__enlace .icono { width: 22px; height: 22px; }
-  .barra__enlace--wa { background: var(--noche); color: #fff; }
+  .barra__enlace--cita { position: relative; }
+  .barra__enlace--cita .icono { color: var(--oro-tinta); }
+  .barra__enlace--cita::before { content: ""; position: absolute; left: 22%; right: 22%; top: 0; height: 3px; background: var(--oro-marca); border-radius: 0 0 3px 3px; }
   .barra__enlace:active { transform: scale(.94); }
   body { padding-bottom: calc(60px + env(safe-area-inset-bottom)); }
   .anima .barra { animation: sube-barra .8s var(--muelle-suave) 1.4s both; }
   @keyframes sube-barra { from { transform: translateY(110%); } }
 }
-
-/* ── Visor de fotos (sin rebote: precarga y fundido corto) ──────────── */
-.visor { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; border: 0; padding: 0; background: rgba(20, 24, 38, .94); color: #fff; }
-.visor::backdrop { background: transparent; }
-.visor[open] { display: grid; place-items: center; }
-.visor__figura { display: grid; gap: 12px; justify-items: center; padding: 64px 16px 24px; max-width: min(1200px, 100%); }
-.visor__figura img { max-height: calc(100svh - 150px); width: auto; max-width: 100%; border-radius: 3px; transition: opacity .18s linear; }
-.visor__figura img.cambiando { opacity: 0; }
-.visor__figura figcaption { font-size: var(--t-peque); color: #C9CDDA; text-align: center; }
-.visor__boton { position: absolute; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; color: #fff; border: 1px solid rgba(255, 255, 255, .3); transition: transform .4s var(--muelle); }
-.visor__boton .icono { transition: transform .4s var(--muelle); }
-.visor__boton:hover, .visor__boton:focus-visible { border-color: var(--oro); }
-.visor__boton:hover .icono, .visor__boton:focus-visible .icono { transform: scale(1.15); }
-.visor__boton:active { transform: scale(.94); }
-.visor__boton--cerrar { top: 14px; right: 14px; }
-.visor__boton--ant { left: 14px; top: 50%; margin-top: -24px; }
-.visor__boton--sig { right: 14px; top: 50%; margin-top: -24px; }
 
 /* ── Sistema de entrada (revelar al llegar) ─────────────────────────── */
 .anima [data-revela] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--sale), transform 1.1s var(--sale); transition-delay: calc(var(--i, 0) * 90ms); }
@@ -270,19 +250,16 @@ body.menu-abierto { overflow: hidden; }
 .quieto *, .quieto *::before, .quieto *::after { animation: none !important; transition: none !important; }
 .quieto [data-revela] { opacity: 1 !important; transform: none !important; }
 
-/* ── Barra superior: el amarillo de su web (solo escritorio) ────────── */
+/* ── Barra superior: sus teléfonos y su correo, en blanco con filete de oro (solo escritorio) ── */
 .barra-sup { display: none; }
 @media (min-width: 1100px) {
-  .barra-sup { display: block; background: var(--oro-vivo); color: var(--noche); font-size: .875rem; font-weight: 600; }
+  .barra-sup { display: block; background: #fff; color: var(--noche); font-size: .875rem; font-weight: 600; border-bottom: 1px solid var(--oro-linea); }
   .barra-sup__dentro { max-width: calc(1440px + 2 * var(--canal)); margin-inline: auto; padding-inline: var(--canal); height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .barra-sup__datos { display: flex; gap: 22px; }
   .barra-sup__datos a { display: inline-flex; align-items: center; gap: 7px; min-height: 38px; color: var(--noche); text-decoration: none; }
-  .barra-sup__datos .icono { width: 16px; height: 16px; transition: transform .45s var(--muelle); }
-  .barra-sup__datos a:hover span, .barra-sup__datos a:focus-visible span { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  .barra-sup__datos .icono { width: 16px; height: 16px; color: var(--oro-tinta); transition: transform .45s var(--muelle); }
+  .barra-sup__datos a:hover span, .barra-sup__datos a:focus-visible span { text-decoration: underline; text-decoration-color: var(--oro-marca); text-decoration-thickness: 2px; text-underline-offset: 3px; }
   .barra-sup__datos a:hover .icono { transform: scale(1.2) rotate(-8deg); }
   .barra-sup__datos a:active span { opacity: .7; }
 }
 
-/* ── Cintas que se deslizan solas: el JS pone tantas copias como hagan falta (--copias) ── */
-@keyframes desliza { to { transform: translateX(calc(-100% / var(--copias, 2))); } }
-@keyframes desliza-inversa { from { transform: translateX(calc(-100% / var(--copias, 2))); } to { transform: none; } }
