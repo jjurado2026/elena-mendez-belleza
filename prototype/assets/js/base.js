@@ -1,4 +1,4 @@
-/* Elena Méndez — base: WhatsApp con el mensaje escrito, cabecera, menú del móvil,
+/* Elena Méndez — base: enlaces de WhatsApp con el mensaje escrito, cabecera, menú del móvil,
    entradas al llegar y bucles en pausa fuera de pantalla. */
 (function () {
   'use strict';
@@ -40,6 +40,8 @@
     }
   }
   boton.addEventListener('click', function () { abrir(boton.getAttribute('aria-expanded') !== 'true'); });
+  // Un enlace a otra parte de esta misma página (p. ej. «Pedir cita») cierra el menú
+  menu.addEventListener('click', function (e) { if (e.target.closest('a[href^="#"]')) abrir(false); });
   d.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && boton.getAttribute('aria-expanded') === 'true') { abrir(false); boton.focus(); }
   });
