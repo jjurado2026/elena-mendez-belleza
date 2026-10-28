@@ -193,16 +193,15 @@
 @media (min-width: 1000px) { .carta { grid-template-columns: minmax(250px, 3.6fr) minmax(0, 8.4fr); align-items: start; } }
 .carta__indice { display: flex; flex-direction: column; }
 .carta__pestana { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 58px; padding: 10px 6px 10px 22px; text-align: left;
-  font-family: var(--serif); font-size: clamp(1.25rem, 1rem + .6vw, 1.625rem); line-height: 1.15; color: var(--texto-suave); border-bottom: 1px solid var(--oro-linea); }
+  font-family: var(--serif); font-size: clamp(1.25rem, 1rem + .6vw, 1.625rem); line-height: 1.15; color: var(--noche); border-bottom: 1px solid var(--oro-linea); }
 .carta__pestana:first-child { border-top: 1px solid var(--oro-linea); }
 .carta__nombre { transition: transform .5s var(--muelle); }
 .carta__pestana .icono { color: var(--oro-tinta); opacity: 0; transform: translateX(-8px); transition: opacity .25s linear, transform .5s var(--muelle); }
-/* La pestaña activa: barra de oro a la izquierda y nombre en azul */
+/* En reposo, todas iguales: ninguna marcada. La del cursor (o la que se ha elegido) lleva barra de oro
+   y flecha; la que se ve mientras la carta avanza sola, solo su hilo de tiempo */
 .carta__pestana::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px; border-radius: 2px; background: var(--oro-marca); transform: scaleY(0); transition: transform .5s var(--muelle); }
-.carta__pestana[aria-selected="true"] { color: var(--noche); }
-.carta__pestana[aria-selected="true"]::before { transform: scaleY(1); }
-.carta__pestana[aria-selected="true"] .icono { opacity: 1; transform: none; }
-.carta__pestana:hover { color: var(--noche); }
+.carta__pestana:hover::before, .carta__pestana.elegida::before { transform: scaleY(1); }
+.carta__pestana:hover .icono, .carta__pestana.elegida .icono { opacity: 1; transform: none; }
 .carta__pestana:hover .carta__nombre { transform: translateX(6px); }
 .carta__pestana:active .carta__nombre { transform: translateX(2px); }
 /* El tiempo que queda para pasar a la siguiente: un hilo de oro bajo la activa */
@@ -241,7 +240,7 @@
   .carta__indice::-webkit-scrollbar { display: none; }
   .carta__pestana { flex: none; width: auto; min-height: 46px; padding: 0 16px; border: 1px solid var(--oro-linea); border-radius: 999px; font-family: var(--sans); font-size: .9375rem; font-weight: 650; white-space: nowrap; }
   .carta__pestana:first-child { border-top: 1px solid var(--oro-linea); }
-  .carta__pestana[aria-selected="true"] { border-color: var(--oro-marca); box-shadow: inset 0 0 0 1px var(--oro-marca); }
+  .carta__pestana.elegida { border-color: var(--oro-marca); box-shadow: inset 0 0 0 1px var(--oro-marca); }
   .carta__pestana::before, .carta__pestana .icono { display: none; }
   .carta__pestana::after { left: 16px; right: 16px; bottom: 6px; }
   .carta__pestana:hover .carta__nombre { transform: none; }
