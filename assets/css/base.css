@@ -1,11 +1,12 @@
 /* =====================================================================
    Elena Méndez Medicina Estética — base: tokens, tipografía, cabecera,
-   botones, pie y sistema de movimiento. v3: blanco y oro, como su web.
-   Ningún botón va relleno en reposo: se rellena el que tiene el cursor.
+   botones, pie y sistema de movimiento. v4 «A medida»: blanco y el oro de su logo,
+   Gambetta + Urbanist. Ningún botón va relleno en reposo: el oro nace en círculo
+   desde el icono del que tiene el cursor.
    Solo se animan transform y opacity. ?ss y «reducir movimiento»: todo quieto.
    ===================================================================== */
 
-@font-face { font-family: 'Gilda Display'; src: url('../fonts/gilda-display-400.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Gambetta'; src: url('../fonts/gambetta.woff2') format('woff2'); font-style: normal; font-weight: 300 700; font-display: swap; }
 @font-face { font-family: 'Urbanist'; src: url('../fonts/urbanist.woff2') format('woff2'); font-style: normal; font-weight: 300 800; font-display: swap; }
 
 :root {
@@ -22,13 +23,14 @@
   --oro-hondo: #C9A13A;      /* filetes y marcos de oro sobre blanco */
   --oro-linea: #EADBA8;      /* líneas finas */
   --oro-suave: #FBF6E7;      /* fondos con un velo de oro */
+  --oro-velo: #FBEFC6;       /* relleno de los botones secundarios con el cursor */
   --rosa: #F2DCEA;           /* su rosa */
   --rosa-claro: #FBF3F7;
   --linea: #E7E3EC;
   --linea-fuerte: #CFCBD9;
 
   /* Tipografía */
-  --serif: 'Gilda Display', 'Bodoni MT', Didot, Georgia, serif;
+  --serif: 'Gambetta', Georgia, 'Times New Roman', serif;
   --sans: 'Urbanist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --t-cuerpo: clamp(1.0625rem, 1rem + .25vw, 1.1875rem);     /* 17 → 19 */
   --t-peque: clamp(.9375rem, .9rem + .12vw, 1rem);            /* 15 → 16 */
@@ -74,7 +76,7 @@ a { color: inherit; }
 ul, ol { list-style: none; }
 strong { font-weight: 700; color: var(--noche); }
 h1, h2, h3 { color: var(--noche); font-weight: 400; }
-::selection { background: var(--rosa); color: var(--noche); }
+::selection { background: var(--oro); color: var(--noche); }
 
 :focus-visible { outline: 2px solid var(--oro-tinta); outline-offset: 3px; border-radius: 3px; }
 .visual-oculto { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
@@ -86,46 +88,36 @@ h1, h2, h3 { color: var(--noche); font-weight: 400; }
 .seccion { padding-block: var(--seccion); position: relative; }
 
 /* ── Tipografía ─────────────────────────────────────────────────────── */
-.titulo-2 { font-family: var(--serif); font-size: var(--t-h2); line-height: 1.08; letter-spacing: 0; text-wrap: balance; }
+.titulo-2 { font-family: var(--serif); font-weight: 300; font-size: var(--t-h2); line-height: 1.06; letter-spacing: 0; text-wrap: balance; }
 .titulo-3 { font-family: var(--serif); font-size: var(--t-h3); line-height: 1.15; }
 .sec-cabeza { display: grid; gap: clamp(12px, 1.6vw, 20px); margin-bottom: clamp(36px, 5vw, 64px); max-width: 46rem; }
 .sec-cabeza--fila { max-width: none; align-items: end; justify-items: start; }
 @media (min-width: 760px) { .sec-cabeza--fila { grid-template-columns: minmax(0, 1fr) auto; } }
 .sec-cabeza__texto { font-size: clamp(1.0625rem, .98rem + .4vw, 1.3125rem); line-height: 1.6; color: var(--texto); max-width: 38em; text-wrap: pretty; }
 
-/* ── Botones: rectos, trazo fino, esquinas pequeñas ─────────────────── */
+/* ── Botones: trazo fino azul en reposo, todos iguales. Con el cursor, el oro nace del
+   icono (o del centro) y se expande en círculo; el texto sigue en azul ──────────── */
 .acciones { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .acciones--centro { justify-content: center; margin-top: clamp(36px, 5vw, 56px); }
 .boton {
+  --bx: 50%; --relleno: var(--oro-velo);
   position: relative; isolation: isolate; overflow: hidden;
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  min-height: 52px; padding: 0 24px; border-radius: 4px; border: 1.5px solid var(--noche);
+  min-height: 52px; padding: 0 24px; border-radius: 6px; border: 1.5px solid var(--noche);
   font: 650 1rem/1.15 var(--sans); letter-spacing: .01em; text-decoration: none; white-space: nowrap;
   color: var(--noche); background: transparent; cursor: pointer;
   transition: transform .55s var(--muelle);
 }
-.boton::before { content: ""; position: absolute; inset: -2px; z-index: -1; background: var(--noche); opacity: 0; transition: opacity .16s linear; }
-.boton::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--oro); transform: scaleX(0); transform-origin: left center; transition: transform .5s var(--sale); }
+.boton:has(> .icono:first-child) { --bx: 33px; }
+.boton::before { content: ""; position: absolute; z-index: -1; left: var(--bx); top: 50%; width: 320%; aspect-ratio: 1; border-radius: 50%;
+  background: var(--relleno); transform: translate(-50%, -50%) scale(0); transition: transform .55s var(--sale); }
+.boton:hover::before, .boton:focus-visible::before { transform: translate(-50%, -50%) scale(1); }
 .boton .icono { transition: transform .5s var(--muelle); }
-.boton:hover::after, .boton:focus-visible::after { transform: scaleX(1); }
-.boton:hover .icono, .boton:focus-visible .icono { transform: scale(1.14) rotate(-6deg); }
+.boton:hover .icono, .boton:focus-visible .icono { transform: scale(1.14) rotate(-8deg); }
 .boton:active { transform: scale(.97); transition-duration: .12s; }
-
-.boton--linea:hover, .boton--linea:focus-visible { color: #fff; }
-.boton--linea:hover::before, .boton--linea:focus-visible::before { opacity: 1; }
-
-/* Oro: en reposo, igual que todos (trazo fino azul); con el cursor se llena del oro de su logo */
-.boton--oro { color: var(--noche); }
-.boton--oro::before { background: var(--oro); }
-.boton--oro::after { background: var(--noche); }
-.boton--oro:hover, .boton--oro:focus-visible { border-color: var(--oro-marca); }
-.boton--oro:hover::before, .boton--oro:focus-visible::before { opacity: 1; }
-
-.boton--linea-clara { color: #fff; border-color: rgba(255, 255, 255, .55); }
-.boton--linea-clara::before { background: #fff; }
-.boton--linea-clara:hover, .boton--linea-clara:focus-visible { color: var(--noche); border-color: #fff; }
-.boton--linea-clara:hover::before, .boton--linea-clara:focus-visible::before { opacity: 1; }
-
+/* Oro: el principal se llena del oro de su logo; los demás, de un velo de oro */
+.boton--oro { --relleno: var(--oro); }
+.boton:hover, .boton:focus-visible { border-color: var(--oro-hondo); }
 
 /* Enlaces de texto: el subrayado de oro se dibuja al pasar */
 .enlace { position: relative; display: inline-flex; align-items: center; min-height: 44px; font-weight: 650; color: var(--noche); text-decoration: none; }
@@ -255,6 +247,8 @@ body.menu-abierto { overflow: hidden; }
   .barra-sup { display: block; background: #fff; color: var(--noche); font-size: .875rem; font-weight: 600; border-bottom: 1px solid var(--oro-linea); }
   .barra-sup__dentro { max-width: calc(1440px + 2 * var(--canal)); margin-inline: auto; padding-inline: var(--canal); height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .barra-sup__datos { display: flex; gap: 22px; }
+  .barra-sup__lema { display: inline-flex; align-items: center; gap: 9px; color: var(--noche); }
+  .barra-sup__lema .icono { width: 20px; height: 20px; color: var(--oro-tinta); }
   .barra-sup__datos a { display: inline-flex; align-items: center; gap: 7px; min-height: 38px; color: var(--noche); text-decoration: none; }
   .barra-sup__datos .icono { width: 16px; height: 16px; color: var(--oro-tinta); transition: transform .45s var(--muelle); }
   .barra-sup__datos a:hover span, .barra-sup__datos a:focus-visible span { text-decoration: underline; text-decoration-color: var(--oro-marca); text-decoration-thickness: 2px; text-underline-offset: 3px; }
