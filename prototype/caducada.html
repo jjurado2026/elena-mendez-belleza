@@ -9,11 +9,11 @@
 <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
 <link rel="icon" href="assets/img/favicon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/gilda-display-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/gambetta.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/urbanist.woff2" as="font" type="font/woff2" crossorigin>
 <style>
   /* Aviso de propuesta caducada: el texto del taller y la home entera en miniatura, que se recorre despacio */
-  @font-face { font-family: 'Gilda Display'; src: url('assets/fonts/gilda-display-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Gambetta'; src: url('assets/fonts/gambetta.woff2') format('woff2'); font-weight: 300 700; font-display: swap; }
   @font-face { font-family: 'Urbanist'; src: url('assets/fonts/urbanist.woff2') format('woff2'); font-weight: 300 800; font-display: swap; }
   :root {
     --noche: #2F3854; --noche-honda: #20263A; --texto: #4A5068; --oro: #F4D058; --oro-marca: #E2B93B; --oro-tinta: #8A6A12;
@@ -37,7 +37,7 @@
   .aviso { width: 100%; max-width: calc(1180px + 2 * var(--canal)); margin-inline: auto; padding: clamp(28px, 6svh, 72px) var(--canal) clamp(36px, 7svh, 80px);
     display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(40px, 7svh, 72px); align-items: center; }
   .aviso__texto { display: grid; gap: clamp(18px, 3svh, 28px); }
-  h1 { font-family: 'Gilda Display', Georgia, serif; font-weight: 400; color: var(--noche); font-size: clamp(1.875rem, 1.1rem + 2.6vw, 3.375rem); line-height: 1.12; text-wrap: balance; max-width: 18ch; }
+  h1 { font-family: 'Gambetta', Georgia, serif; font-weight: 300; color: var(--noche); font-size: clamp(1.875rem, 1.1rem + 2.6vw, 3.375rem); line-height: 1.12; text-wrap: balance; max-width: 18ch; }
   .mas { font-size: clamp(1.0625rem, .95rem + .45vw, 1.375rem); max-width: 34em; }
   .mas a { color: var(--noche); font-weight: 650; text-decoration: underline; text-decoration-color: var(--oro-marca); text-decoration-thickness: 2px; text-underline-offset: 5px; overflow-wrap: anywhere; display: inline-block; transition: transform .45s var(--muelle); }
   .mas a:hover { transform: translateY(-2px); }
@@ -78,7 +78,7 @@
 
     <figure class="miniatura">
       <span class="ventana" tabindex="0" aria-label="Miniatura de la home completa">
-        <img src="assets/img/home-miniatura.webp" width="480" height="3154" alt="Miniatura de la home propuesta para Elena Méndez Medicina Estética, completa de arriba abajo" onerror="this.closest('figure').hidden = true">
+        <img src="assets/img/home-miniatura.webp" width="480" height="3006" alt="Miniatura de la home propuesta para Elena Méndez Medicina Estética, completa de arriba abajo" onerror="this.closest('figure').hidden = true">
       </span>
     </figure>
   </main>

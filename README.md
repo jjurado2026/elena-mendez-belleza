@@ -4,34 +4,30 @@ Prototipo de homepage para **Elena Méndez** ([elenamendez-belleza.com](https://
 
 **Prototipo:** https://jjurado2026.github.io/elena-mendez-belleza/
 
-**El problema que resuelve:** su home actual tarda 6,3 s en pintar lo principal en un móvil con 4G lenta, el titular ocupa la primera pantalla entera del móvil sin un solo botón de cita y el chat de WhatsApp se abre solo y tapa casi la mitad de cada pantalla. La propuesta conserva su identidad (blanco y el oro de su logo), sus textos y todo su SEO, y lo ordena para que se vea primero lo que importa: **las promociones, las novedades y pedir cita por correo**.
+**El problema que resuelve:** su home actual tarda 6,3 s en pintar lo principal en un móvil con 4G lenta, el titular ocupa la primera pantalla entera del móvil sin un solo botón de cita y el chat de WhatsApp se abre solo y tapa casi la mitad de cada pantalla. La propuesta conserva su identidad (blanco y el oro de su logo), sus textos y todo su SEO, y lo convierte en un recorrido de conversión: **encuentra tu tratamiento, mira su precio y su promoción, y pide cita en tres pasos**.
 
-## v3 (ronda de cambios 3): blanco y oro, su contenido y su SEO
+## v4 «A medida» (ronda de cambios 4): estructura de conversión, con su identidad y su SEO
 
-La v1 «Marcaje» (etiqueta `v1-home`) y la v2 «Órbita de luz» (etiqueta `v2-home`) se cambiaron por esta, que parte de su web:
+La v1 «Marcaje» (`v1-home`), la v2 «Órbita de luz» (`v2-home`) y la v3 (blanco y oro, en el historial) se sustituyen por esta, hecha tras revisar su competencia (Dorsia, Clínica Menorca, SkinSpirit y guías de conversión del sector: `_interno/competencia.md`). Su identidad —blanco, el oro de su logo y su azul en los textos— con Gambetta (titulares y precios) y Urbanist. Embudo:
 
-1. **Su identidad:** su favicon, blanco y el oro de su logo (sin amarillo ni fondos azules); su azul solo en titulares y texto. La firma, un doble filete de oro en el pie del hero, los marcos y la pieza de la cita.
-2. **Hero:** su foto entera sobre blanco (en vertical, recortada a la cara) con **su titular y su descripción, literales**; «Ver promociones» y «Pedir cita»; sus cuatro insignias.
-3. **Promociones:** las ocho a la vista a la vez, en una rejilla de 4 × 2 (2 columnas en el móvil), sin carrusel ni solapes; cada una con su imagen, su precio o su etiqueta, «Pedir cita» y «Leer más» a su entrada. Debajo, «Ver todas las promociones» y su frase de financiación.
-4. **Novedades:** Indiba Edna Pro Max y Endolift con sus vídeos (en marcha mientras se ven) y Exosomas, cada una a su proporción y a la misma altura.
-5. **Tratamientos y servicios de medicina estética avanzada en Torrelodones (Madrid):** «la carta», un índice de sus siete páginas que avanza solo; la foto de cada una se destapa con dos lamas de canto de oro, en paspartú, sin recortarla, con su lista de tratamientos y su enlace. Debajo, **su lista literal de tratamientos y sus doce poblaciones** (su bloque de SEO).
-6. **Medicina estética:** su texto entero y su foto.
-7. **Trabajamos con las primeras marcas:** su texto, su alta cosmética y sus cinco acreditaciones en medallas que giran.
-8. **Blog** y **¡Pide aquí tu cita!:** foto y formulario en una sola pieza, a la misma altura. El formulario envía la solicitud por correo (nombre, teléfono, email opcional, el tratamiento ya elegido si se llega desde una promoción, franja y mensaje); en el prototipo abre el correo con la solicitud escrita.
-9. **SEO intacto:** su `title`, su meta descripción, su H1, sus H2 (Promociones, Tratamientos y servicios…, Medicina estética, Blog, Trabajamos con las primeras marcas, ¡Pide aquí tu cita!) y enlaces a cada promoción, novedad, página de tratamiento y entrada del blog.
+1. **Hero:** su foto entera sobre blanco, **su titular y su descripción, literales**, y el **buscador «¿Qué te gustaría mejorar?»**: ocho opciones (arrugas, labios, flacidez, manchas, vello, silueta, luminosidad, bienestar) que enseñan sus tratamientos con su precio o su promoción y convierten el botón en «Pedir cita para tus labios». Antes de elegir, las promociones del momento con precio. Confianza: 4,7 en Treatwell (298 opiniones), centro sanitario autorizado, desde 2014.
+2. **Promociones en vales:** nueve vales dorados con la matriz de su cartel, línea de corte y su precio «desde» o su gancho; **todas a la vista** (728 px en escritorio) y **filtro por zona** (rostro, cuerpo, láser, medicina estética) que recoloca los vales deslizándose. Cada «Pedir cita» llega al formulario con esa promoción elegida.
+3. **Novedades en un fichero:** Indiba Edna Pro Max y Endolift (sus vídeos) y Exosomas; cada ficha se da la vuelta hacia delante sobre su canto; avanza sola y se elige en el índice.
+4. **Tratamientos y servicios…:** sus siete páginas en un mosaico de fotos y una pieza «¿No sabes cuál elegir? Te asesoramos» con cita, teléfono y WhatsApp; debajo, su lista de 15 tratamientos y sus 12 poblaciones (su bloque de SEO).
+5. **Confianza:** su «Medicina Estética» entera con sus dos fotos, cuatro garantías (doctores con máster, SS01144, Centro Indiba, desde 2014) y «Trabajamos con las primeras marcas» con sus cinco acreditaciones en monedas que giran.
+6. **¡Pide aquí tu cita!:** su paso a paso con sus frases (pides tu cita, te asesoramos, un plan a medida, financiación a medida) y la **cita en 3 pasos** (qué, cuándo, tus datos) en una pieza con su foto a la misma altura y sus opiniones de Treatwell encima, que se turnan. Por correo (en el prototipo abre el correo con la solicitud escrita); teléfono y WhatsApp a mano; dirección y horario debajo.
+7. **Preguntas frecuentes** con sus datos (marcado FAQ para Google) y **Blog** compacto.
 
-Fuera: la primera consulta gratis (no es una oferta suya: solo aparece de pasada en una promoción antigua), la órbita y los puntos sobre la cara, el bloque amarillo, las opiniones de Treatwell, el cheque regalo y el bloque del centro (dirección y horario, en el pie).
-
-**Regla de botones:** ninguno va relleno en reposo; se rellena el que tiene el cursor. El elemento que recibe el cursor no se mueve nunca (se animan sus hijos).
+**Botones:** todos iguales en reposo (trazo fino); con el cursor, el oro nace del icono y se expande en círculo. Nada elegido de inicio; lo que elige la persona se queda marcado.
 
 ## Fotos y vídeos
-Las suyas, sin retocar color: las de su home en el mismo papel y la de cada promoción, novedad y página de tratamientos. Las fotos con personas se han ampliado con IA (Real-ESRGAN, modelo remacri) devolviéndoles el color exacto del original; carteles e insignias, solo reescalados. La imagen de Dermapen + Indiba es una captura de móvil: se sirve solo el cartel, sin las bandas blancas ni los botones del visor. Vídeos: un fragmento de su vídeo de Indiba Edna Pro Max (solo los planos del aparato) y su vídeo de Endolift en cabina.
+Las suyas, sin retocar color. Las fotos con personas, ampliadas con IA (Real-ESRGAN, remacri) devolviéndoles el color del original; carteles e insignias, solo reescalados. La imagen de Dermapen + Indiba es una captura de móvil: se sirve solo el cartel. Vídeos: un fragmento de su vídeo de Indiba Edna Pro Max (solo el aparato) y su vídeo de Endolift en cabina.
 
 ## Comprobado, no asumido
-Con el kit del taller (Chrome headless por DevTools): **el hero cabe entero en 17 tamaños**, de 320×568 a 2560×1440, también en móvil apaisado y descontando la barra fija del móvil · su title, su H1, su descripción y sus H2, presentes · las 8 promociones a la vez y sin solapes · «Pedir cita» de una promoción deja ese tratamiento elegido en el formulario · el formulario avisa de lo que falta y prepara el correo · los vídeos en marcha al verse · la carta avanza sola y se elige al pasar el ratón · ningún botón se queda «pillado» · sin desbordamiento horizontal · cero errores de JavaScript · con `prefers-reduced-motion` nada se mueve y todo se ve · solo se animan `transform` y `opacity`.
+Con el kit del taller (Chrome headless por DevTools): el hero cabe entero en 17 tamaños, de 320×568 a 2560×1440 · title, H1, descripción, H2, lista y poblaciones, literales · buscador, filtro, fichero, «Pedir cita» con la elección hecha y la cita en 3 pasos, con ratón y clics reales (24 pruebas) · nada coloreado en reposo · ningún botón se queda «pillado» (17 casos) · sin desbordamiento horizontal · cero errores de JavaScript · con `prefers-reduced-motion` nada se mueve y todo se ve · solo se animan `transform` y `opacity`.
 
 ## Stack
-HTML, CSS y JavaScript puro. Cero dependencias, cero build. Gilda Display y Urbanist autoalojadas.
+HTML, CSS y JavaScript puro. Cero dependencias, cero build. Gambetta (Fontshare, ITF Free Font License) y Urbanist (OFL), autoalojadas.
 
 Parámetros útiles: `?ss` (sin animaciones, para capturas) · `?caducada` (simula la caducidad).
 
