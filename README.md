@@ -6,7 +6,22 @@ Prototipo de homepage para **Elena Méndez** ([elenamendez-belleza.com](https://
 
 **El problema que resuelve:** su home actual tarda 6,3 s en pintar lo principal en un móvil con 4G lenta, el titular ocupa la primera pantalla entera del móvil sin un solo botón de cita y el chat de WhatsApp se abre solo y tapa casi la mitad de cada pantalla. La propuesta conserva su identidad (blanco y el oro de su logo), sus textos y todo su SEO, y lo convierte en un recorrido de conversión: **encuentra tu tratamiento, mira su precio y su promoción, y pide cita en tres pasos**.
 
-## v5 «Oro líquido» (ronda de cambios 5): vuelta completa, vigente
+## v6 «Portada» (ronda de cambios 6): elegancia y sencillez, vigente
+
+Rechazado el oro líquido («muy feo», «cortinas doradas»). Prima la elegancia, el acabado premium y la facilidad para una clientela en torno a los 50 años. Se mantienen sus textos y su SEO literales, su favicon, blanco y oro.
+
+- **Hero:** su foto sin tocar, que se funde en el blanco, y su título a gran tamaño entrelazado con ella; descripción y botones en el blanco de la foto. Una sola entrada suave al cargar.
+- **Movimiento:** scroll normal: nada se fija ni está ligado al scroll. Lo único que se mueve solo es el vídeo dentro de la palabra «Novedades», y solo mientras se ve. Lo demás responde a la persona (cursor, toque).
+- **Promociones:** precio, texto y «Pedir cita» siempre a la vista, sin nada escondido bajo el cursor.
+- **Novedades:** la palabra con su vídeo dentro, quieta; debajo sus tres novedades, con vídeo solo si se pulsa.
+- **Tratamientos:** índice con sus 7 páginas; se elige con un clic. En móvil, acordeón.
+- **Cita:** formulario clásico con etiquetas y teléfonos a la vista.
+- **Bloques nuevos:** la guía «¿Qué te gustaría mejorar?» (de la preocupación a sus tratamientos) y sus opiniones reales de Treatwell (4,7 de 5, 298 opiniones). En el pie, su horario y «Cómo llegar».
+- **Tipografía:** Melodrama solo en tamaños grandes (por debajo de unos 40 px su «t» se pierde); General Sans en el resto.
+
+Pruebas: `_interno/herramientas/pruebas-v6.mjs` (ratón, teclado y toques reales; 22 tamaños), `pillados.mjs`, `medir-hero.mjs` (17 tamaños) y `verificar.mjs` con ruta absoluta.
+
+## v5 «Oro líquido» (ronda de cambios 5): etiqueta `v5-home`
 
 Rechazada la v4 («extremadamente básica», tipografía y hero sin interés), se rehace todo menos su identidad y su SEO: blanco y oro de su logo, sus textos literales y su favicon.
 
