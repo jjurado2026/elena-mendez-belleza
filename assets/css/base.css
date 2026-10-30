@@ -1,8 +1,8 @@
 /* =====================================================================
    Elena Méndez Medicina Estética — base: tokens, tipografía, cabecera,
-   botones, pie y sistema de movimiento. v5 «Oro líquido»: blanco y el oro de su logo,
-   Melodrama + General Sans. Ningún botón va relleno en reposo: con el cursor, tres
-   gotas de oro nacen dentro y se unen.
+   botones, pie y sistema de movimiento. v6 «Portada»: blanco y el oro de su logo,
+   Melodrama + General Sans. Ningún botón va relleno en reposo: con el cursor, el oro
+   crece en círculo desde el centro.
    Solo se animan transform y opacity. ?ss y «reducir movimiento»: todo quieto.
    ===================================================================== */
 
@@ -23,7 +23,7 @@
   --oro-hondo: #C9A13A;      /* filetes y marcos de oro sobre blanco */
   --oro-linea: #EADBA8;      /* líneas finas */
   --oro-suave: #FBF6E7;      /* fondos con un velo de oro */
-  --oro-velo: #FBEFC6;       /* relleno de los botones secundarios con el cursor */
+  --marfil: #FBFAF6;         /* fondos muy pálidos de las fotos y de dos secciones */
   --rosa: #F2DCEA;           /* su rosa */
   --rosa-claro: #FBF3F7;
   --linea: #E7E3EC;
@@ -95,28 +95,19 @@ h1, h2, h3 { color: var(--noche); font-weight: 400; }
 @media (min-width: 760px) { .sec-cabeza--fila { grid-template-columns: minmax(0, 1fr) auto; } }
 .sec-cabeza__texto { font-size: clamp(1.0625rem, .98rem + .4vw, 1.3125rem); line-height: 1.6; color: var(--texto); max-width: 38em; text-wrap: pretty; }
 
-/* ── Botones: la gota. Trazo fino en reposo, con su pico abajo a la izquierda; con el cursor,
-   tres gotas de oro nacen del pico y se unen (filtro #gotas). El texto sigue en azul ── */
-.acciones { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; }
+/* ── Botones: trazo fino en reposo; con el cursor, el oro crece en círculo desde el centro ── */
 .boton {
   position: relative; isolation: isolate; overflow: hidden;
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  min-height: 54px; padding: 0 30px; border-radius: 28px 28px 28px 5px; border: 1.5px solid var(--noche);
-  font: 600 1.0313rem/1.15 var(--sans); letter-spacing: .005em; text-decoration: none; white-space: nowrap;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 54px; padding: 0 34px; border-radius: 999px; border: 1px solid var(--noche);
+  font: 600 1.0313rem/1.15 var(--sans); text-decoration: none; white-space: nowrap;
   color: var(--noche); background: transparent; cursor: pointer;
-  transition: transform .55s var(--muelle);
 }
-.boton > span:not(.boton__oro) { position: relative; z-index: 1; }
-.boton__oro { position: absolute; inset: 0; filter: url(#gotas); pointer-events: none; }
-.boton__oro i { position: absolute; left: 0; bottom: 0; width: 240%; aspect-ratio: 1; margin: 0 0 -120% -120%; border-radius: 50%; background: var(--oro); transform: scale(0); transition: transform .7s var(--sale) .06s; }
-.boton__oro i:nth-child(2) { left: 26%; bottom: 62%; width: 22px; margin: 0; transition: transform .4s var(--muelle); }
-.boton__oro i:nth-child(3) { left: 56%; bottom: 20%; width: 16px; margin: 0; transition: transform .45s var(--muelle) .04s; }
+.boton::before { content: ""; position: absolute; z-index: -1; left: 50%; top: 50%; width: 120%; aspect-ratio: 1; margin: -60% 0 0 -60%; border-radius: 50%; background: var(--oro); transform: scale(0); transition: transform .6s var(--sale); }
 .boton:hover, .boton:focus-visible { border-color: var(--oro-hondo); }
-.boton:hover .boton__oro i, .boton:focus-visible .boton__oro i { transform: scale(1); }
-.boton:active { transform: scale(.97); transition-duration: .12s; }
-.boton--peque { min-height: 46px; padding: 0 22px; font-size: .9375rem; border-radius: 24px 24px 24px 4px; }
-.boton--claro { color: #fff; border-color: rgba(255, 255, 255, .85); }
-.boton--claro:hover, .boton--claro:focus-visible { color: var(--noche); border-color: var(--oro); }
+.boton:hover::before, .boton:focus-visible::before { transform: scale(1); }
+.boton:active::before { transform: scale(.94); transition-duration: .12s; }
+.boton--peque { min-height: 46px; padding: 0 24px; font-size: .9688rem; }
 
 /* Enlaces de texto: el subrayado de oro se dibuja al pasar */
 .enlace { position: relative; display: inline-flex; align-items: center; min-height: 44px; font-weight: 650; color: var(--noche); text-decoration: none; }
@@ -148,7 +139,7 @@ h1, h2, h3 { color: var(--noche); font-weight: 400; }
 .cab__enlace::after { content: ""; position: absolute; left: 0; right: 0; bottom: 9px; height: 2px; background: var(--oro-marca); transform: scaleX(0); transform-origin: right center; transition: transform .45s var(--sale); }
 .cab__enlace:hover::after, .cab__enlace:focus-visible::after { transform: scaleX(1); transform-origin: left center; }
 .cab__enlace:active { transform: translateY(1px); }
-.boton--cab { min-height: 44px; padding: 0 22px; border-radius: 22px 22px 22px 4px; font-size: .9688rem; }
+.boton--cab { min-height: 44px; padding: 0 24px; font-size: .9688rem; }
 .cab__boton-menu, .cab__llamar { display: none; }
 
 @media (max-width: 1099px) {
@@ -175,7 +166,7 @@ h1, h2, h3 { color: var(--noche); font-weight: 400; }
 .menu-movil { position: fixed; inset: var(--cab) 0 0; z-index: 49; background: #fff; overflow-y: auto; overscroll-behavior: contain; }
 .menu-movil[hidden] { display: none; }
 .menu-movil__dentro { min-height: 100%; display: grid; align-content: space-between; gap: 32px; padding: 20px var(--canal) calc(28px + env(safe-area-inset-bottom)); }
-.menu-movil__lista a { display: flex; align-items: center; min-height: 52px; font-family: var(--serif); font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.25rem); line-height: 1.1; color: var(--noche); text-decoration: none; border-bottom: 1px solid var(--linea); }
+.menu-movil__lista a { display: flex; align-items: center; min-height: 52px; font-weight: 600; font-size: clamp(1.25rem, 1.1rem + .8vw, 1.5rem); line-height: 1.2; color: var(--noche); text-decoration: none; border-bottom: 1px solid var(--linea); }
 .menu-movil__secundaria { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-top: 18px; }
 .menu-movil__secundaria a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--texto); text-decoration: none; }
 .menu-movil a:active { transform: translateX(4px); }
@@ -221,18 +212,13 @@ body.menu-abierto { overflow: hidden; }
     background: #fff; border-top: 1px solid var(--linea); padding-bottom: env(safe-area-inset-bottom); box-shadow: 0 -10px 30px -18px rgba(32, 38, 58, .35); }
   .barra__enlace { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 60px; font-size: .8125rem; font-weight: 650; color: var(--noche); text-decoration: none; transition: transform .35s var(--muelle); }
   .barra__enlace .icono { width: 22px; height: 22px; }
-  /* Todos iguales en reposo; el sobre de «Pedir cita» hace un gesto de vez en cuando */
-  .anima .barra__enlace--cita .icono { animation: gesto-sobre 7s ease-in-out 3s infinite; }
-  @keyframes gesto-sobre { 0%, 86%, 100% { transform: none; } 90% { transform: translateY(-3px) rotate(-10deg); } 94% { transform: translateY(0) rotate(7deg); } }
   .barra__enlace:active { transform: scale(.94); }
   body { padding-bottom: calc(60px + env(safe-area-inset-bottom)); }
-  .anima .barra { animation: sube-barra .8s var(--muelle-suave) 1.4s both; }
-  @keyframes sube-barra { from { transform: translateY(110%); } }
 }
 
 /* ── Sistema de entrada (revelar al llegar) ─────────────────────────── */
-.anima [data-revela] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--sale), transform 1.1s var(--sale); transition-delay: calc(var(--i, 0) * 90ms); }
-.anima [data-revela].visto { opacity: 1; transform: none; }
+.anima [data-revela] { opacity: 0; transition: opacity .8s linear; }
+.anima [data-revela].visto { opacity: 1; }
 
 /* Bucles pausados fuera de pantalla */
 .pausa, .pausa * { animation-play-state: paused !important; }
