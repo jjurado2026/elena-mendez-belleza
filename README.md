@@ -6,6 +6,8 @@ Prototipo de homepage para **Elena Méndez** ([elenamendez-belleza.com](https://
 
 **El problema que resuelve:** su home actual tarda 6,3 s en pintar lo principal en un móvil con 4G lenta, el titular ocupa la primera pantalla entera del móvil sin un solo botón de cita y el chat de WhatsApp se abre solo y tapa casi la mitad de cada pantalla. La propuesta conserva su identidad (blanco y el oro de su logo), sus textos y todo su SEO, y lo convierte en un recorrido de conversión: **encuentra tu tratamiento, mira su precio y su promoción, y pide cita en tres pasos**.
 
+**Estado:** home terminada. Caducidad real: envío el 31-oct-2026, visible hasta el 9-nov a las 23:59 de Madrid.
+
 ## v7 (ronda de cambios 7): subir el nivel, vigente
 
 Tras comparar con Tikal, Don Chamberí, Second Bike, Lorena Campillo, Relax Store, Reggae School, OnWhite, Fiestas con Glamour y Velarque (`_interno/herramientas/otros.mjs`): la v6 no tenía estructura de hero, ni ritmo de color, y estaba casi todo centrado.
