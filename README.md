@@ -6,6 +6,20 @@ Prototipo de homepage para **Elena Méndez** ([elenamendez-belleza.com](https://
 
 **El problema que resuelve:** su home actual tarda 6,3 s en pintar lo principal en un móvil con 4G lenta, el titular ocupa la primera pantalla entera del móvil sin un solo botón de cita y el chat de WhatsApp se abre solo y tapa casi la mitad de cada pantalla. La propuesta conserva su identidad (blanco y el oro de su logo), sus textos y todo su SEO, y lo convierte en un recorrido de conversión: **encuentra tu tratamiento, mira su precio y su promoción, y pide cita en tres pasos**.
 
+## v5 «Oro líquido» (ronda de cambios 5): vuelta completa, vigente
+
+Rechazada la v4 («extremadamente básica», tipografía y hero sin interés), se rehace todo menos su identidad y su SEO: blanco y oro de su logo, sus textos literales y su favicon.
+
+- **Hero:** oro líquido en tiempo real (WebGL, `assets/js/oro.js`) con su cara de marca en una ventana que se deforma; reacciona al cursor y, al bajar, inunda la pantalla y deja su descripción, sus acreditaciones y la financiación. Sin WebGL o con movimiento reducido: imagen fija.
+- **Tipografía:** Melodrama (titulares grandes, peso 700) + General Sans (títulos pequeños y texto). Melodrama no se usa por debajo de unos 30 px: no se lee.
+- **Promociones:** 8 a la vista; el oro se retira al llegar y vuelve desde el cursor con el detalle. En táctil, un toque abre el detalle (en móvil la fila crece para que quepa entero).
+- **Novedades:** se entra por dentro de las letras de la palabra y pasan sus 3 novedades.
+- **Tratamientos:** cilindro 3D con sus 7 páginas, foto y panel a cada lado, y su lista SEO literal.
+- **Medicina estética:** su foto fija y la hoja blanca con su texto entero que sube encima. **Marcas:** monedas que giran con el scroll y quedan de frente.
+- **Cita:** se escribe como una frase («Me llamo… y quiero cita para…») y va por correo; todos los «Pedir cita» llegan con la elección hecha.
+
+Pruebas: `_interno/herramientas/pruebas-v5.mjs` (ratón, teclado y toques reales; 22 tamaños), `pillados.mjs`, `medir-hero.mjs` (17 tamaños) y `verificar.mjs` **con ruta absoluta**.
+
 ## v4 «A medida» (ronda de cambios 4): estructura de conversión, con su identidad y su SEO
 
 La v1 «Marcaje» (`v1-home`), la v2 «Órbita de luz» (`v2-home`) y la v3 (blanco y oro, en el historial) se sustituyen por esta, hecha tras revisar su competencia (Dorsia, Clínica Menorca, SkinSpirit y guías de conversión del sector: `_interno/competencia.md`). Su identidad —blanco, el oro de su logo y su azul en los textos— con Gambetta (titulares y precios) y Urbanist. Embudo:
