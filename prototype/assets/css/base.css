@@ -1,6 +1,6 @@
 /* =====================================================================
    Elena Méndez Medicina Estética — base: tokens, tipografía, cabecera,
-   botones, pie y sistema de movimiento. v6 «Portada»: blanco y el oro de su logo,
+   botones, pie y sistema de movimiento. v7: blanco y el oro de su logo,
    Melodrama + General Sans. Ningún botón va relleno en reposo: con el cursor, el oro
    crece en círculo desde el centro.
    Solo se animan transform y opacity. ?ss y «reducir movimiento»: todo quieto.
@@ -103,10 +103,13 @@ h1, h2, h3 { color: var(--noche); font-weight: 400; }
   font: 600 1.0313rem/1.15 var(--sans); text-decoration: none; white-space: nowrap;
   color: var(--noche); background: transparent; cursor: pointer;
 }
-.boton::before { content: ""; position: absolute; z-index: -1; left: 50%; top: 50%; width: 120%; aspect-ratio: 1; margin: -60% 0 0 -60%; border-radius: 50%; background: var(--oro); transform: scale(0); transition: transform .6s var(--sale); }
+.boton::before { content: ""; position: absolute; z-index: -1; left: 50%; top: 50%; width: 120%; aspect-ratio: 1; margin: -60% 0 0 -60%; border-radius: 50%; background: var(--oro); opacity: 0; transform: scale(.55); transition: transform .35s var(--sale), opacity .15s linear; }
 .boton:hover, .boton:focus-visible { border-color: var(--oro-hondo); }
-.boton:hover::before, .boton:focus-visible::before { transform: scale(1); }
-.boton:active::before { transform: scale(.94); transition-duration: .12s; }
+.boton:hover::before, .boton:focus-visible::before { opacity: 1; transform: none; transition: transform .45s var(--sale), opacity .2s linear; }
+.boton:active::before { transform: scale(.94); transition-duration: .1s; }
+/* Sobre la banda oscura */
+.guia .boton { color: #fff; border-color: rgba(255, 255, 255, .8); }
+.guia .boton:hover, .guia .boton:focus-visible { color: var(--noche); border-color: var(--oro); }
 .boton--peque { min-height: 46px; padding: 0 24px; font-size: .9688rem; }
 
 /* Enlaces de texto: el subrayado de oro se dibuja al pasar */
@@ -125,7 +128,7 @@ h1, h2, h3 { color: var(--noche); font-weight: 400; }
 .estrellas svg { width: 100%; height: auto; }
 
 /* ── Cabecera fija ──────────────────────────────────────────────────── */
-.cab { position: sticky; top: 0; z-index: 50; height: var(--cab); background: #fff; }
+.cab { position: sticky; top: 0; z-index: 50; height: var(--cab); background: #fff; border-bottom: 1px solid var(--oro-linea); }
 .cab::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 14px; pointer-events: none;
   background: linear-gradient(rgba(47, 56, 84, .10), rgba(47, 56, 84, 0)); opacity: 0; transition: opacity .3s linear; }
 .cab.con-sombra::after { opacity: 1; }
@@ -227,18 +230,13 @@ body.menu-abierto { overflow: hidden; }
 .quieto *, .quieto *::before, .quieto *::after { animation: none !important; transition: none !important; }
 .quieto [data-revela] { opacity: 1 !important; transform: none !important; }
 
-/* ── Barra superior: sus teléfonos y su correo, en blanco con filete de oro (solo escritorio) ── */
+/* ── Barra superior: dónde están y sus teléfonos (solo escritorio) ───── */
 .barra-sup { display: none; }
 @media (min-width: 1100px) {
-  .barra-sup { display: block; background: #fff; color: var(--noche); font-size: .875rem; font-weight: 600; border-bottom: 1px solid var(--oro-linea); }
-  .barra-sup__dentro { max-width: calc(1440px + 2 * var(--canal)); margin-inline: auto; padding-inline: var(--canal); height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-  .barra-sup__datos { display: flex; gap: 22px; }
-  .barra-sup__lema { display: inline-flex; align-items: center; gap: 9px; color: var(--noche); }
-  .barra-sup__lema .icono { width: 20px; height: 20px; color: var(--oro-tinta); }
-  .barra-sup__datos a { display: inline-flex; align-items: center; gap: 7px; min-height: 38px; color: var(--noche); text-decoration: none; }
-  .barra-sup__datos .icono { width: 16px; height: 16px; color: var(--oro-tinta); transition: transform .45s var(--muelle); }
-  .barra-sup__datos a:hover span, .barra-sup__datos a:focus-visible span { text-decoration: underline; text-decoration-color: var(--oro-marca); text-decoration-thickness: 2px; text-underline-offset: 3px; }
-  .barra-sup__datos a:hover .icono { transform: scale(1.2) rotate(-8deg); }
-  .barra-sup__datos a:active span { opacity: .7; }
+  :root { --sup: 37px; }
+  .barra-sup { display: block; height: var(--sup); border-bottom: 1px solid var(--oro-linea); background: #fff; font-size: .875rem; font-weight: 500; color: var(--noche); }
+  .barra-sup__dentro { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 100%; max-width: calc(1440px + 2 * var(--canal)); margin-inline: auto; padding-inline: var(--canal); }
+  .barra-sup__tel { display: flex; gap: 18px; }
+  .barra-sup a { display: inline-flex; align-items: center; min-height: 36px; font-weight: 600; color: var(--noche); text-decoration: none; }
+  .barra-sup a:hover, .barra-sup a:focus-visible { text-decoration: underline; text-decoration-color: var(--oro-hondo); text-underline-offset: 4px; }
 }
-

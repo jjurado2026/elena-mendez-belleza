@@ -6,7 +6,17 @@ Prototipo de homepage para **Elena Méndez** ([elenamendez-belleza.com](https://
 
 **El problema que resuelve:** su home actual tarda 6,3 s en pintar lo principal en un móvil con 4G lenta, el titular ocupa la primera pantalla entera del móvil sin un solo botón de cita y el chat de WhatsApp se abre solo y tapa casi la mitad de cada pantalla. La propuesta conserva su identidad (blanco y el oro de su logo), sus textos y todo su SEO, y lo convierte en un recorrido de conversión: **encuentra tu tratamiento, mira su precio y su promoción, y pide cita en tres pasos**.
 
-## v6 «Portada» (ronda de cambios 6): elegancia y sencillez, vigente
+## v7 (ronda de cambios 7): subir el nivel, vigente
+
+Tras comparar con Tikal, Don Chamberí, Second Bike, Lorena Campillo, Relax Store, Reggae School, OnWhite, Fiestas con Glamour y Velarque (`_interno/herramientas/otros.mjs`): la v6 no tenía estructura de hero, ni ritmo de color, y estaba casi todo centrado.
+
+- **Hero:** retrato de la cabecera a la franja base, sin tocar; título, subtítulo, descripción y botones en un solo eje, con el mismo aire arriba y abajo (medido); franja base con sus acreditaciones, su financiación y sus opiniones.
+- **Ritmo:** blanco; banda de su azul noche en la guía; marfil en opiniones; su rosa junto a la foto de Medicina estética.
+- **Alineación:** todo a la izquierda, con cabeceras a dos columnas (título y texto sobre la misma línea base).
+- **Remates:** barra superior con dirección, horario y teléfonos; filetes de oro; pie ordenado; Medicina estética con la foto llenando su mitad.
+- **Movimiento:** entrada de menos de 1 s al cargar; hover que responde en menos de medio segundo; nada al bajar salvo un fundido en los títulos; el vídeo de «Novedades» es lo único que se mueve solo.
+
+## v6 «Portada» (ronda de cambios 6): etiqueta `v6-home`
 
 Rechazado el oro líquido («muy feo», «cortinas doradas»). Prima la elegancia, el acabado premium y la facilidad para una clientela en torno a los 50 años. Se mantienen sus textos y su SEO literales, su favicon, blanco y oro.
 
@@ -19,7 +29,7 @@ Rechazado el oro líquido («muy feo», «cortinas doradas»). Prima la eleganci
 - **Bloques nuevos:** la guía «¿Qué te gustaría mejorar?» (de la preocupación a sus tratamientos) y sus opiniones reales de Treatwell (4,7 de 5, 298 opiniones). En el pie, su horario y «Cómo llegar».
 - **Tipografía:** Melodrama solo en tamaños grandes (por debajo de unos 40 px su «t» se pierde); General Sans en el resto.
 
-Pruebas: `_interno/herramientas/pruebas-v6.mjs` (ratón, teclado y toques reales; 22 tamaños), `pillados.mjs`, `medir-hero.mjs` (17 tamaños) y `verificar.mjs` con ruta absoluta.
+Pruebas: `_interno/herramientas/pruebas-v7.mjs` (ratón, teclado y toques reales; 22 tamaños), `pillados.mjs`, `medir-hero.mjs` (17 tamaños) y `verificar.mjs` con ruta absoluta.
 
 ## v5 «Oro líquido» (ronda de cambios 5): etiqueta `v5-home`
 
